@@ -14,4 +14,6 @@ The RapidPipeline 3D Processor Software is utilized as an examplary pipeline too
 
 ## Sample Assets
 
+The a sample assets can be found in the respective [sub-directory](./sample-assets/sample-assets-overview.md)
+
 ## Processing Samples
