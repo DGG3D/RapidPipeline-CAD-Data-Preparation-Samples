@@ -14,7 +14,7 @@ The RapidPipeline 3D Processor Software is utilized as an examplary pipeline too
 
 ## Sample Assets
 
-The a sample CAD assets are collected from publicly available data (e.g. from [grabcad.com](https://grabcad.com/library)) and more information as well as the respecitve workflows each asset were utilized for can be found in the respective [sub-directory](./sample-assets/sample-assets-overview.md)
+The sample CAD assets are collected from publicly available data (e.g. from [grabcad.com](https://grabcad.com/library)) and more information as well as the respecitve workflows each asset were utilized for can be found in the respective [sub-directory](./sample-assets/sample-assets-overview.md)
 
 ## Processing Samples
 
