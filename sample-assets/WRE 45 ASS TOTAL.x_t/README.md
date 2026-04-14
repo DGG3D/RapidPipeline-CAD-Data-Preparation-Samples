@@ -10,7 +10,7 @@ https://grabcad.com/library/refrigerator-wre45-1
 
 ## Screenshots
 
-![screenshot](screenshot/WRE 45 ASS TOTAL.x_t.jpg)
+![screenshot](<screenshot/WRE 45 ASS TOTAL.x_t.jpg>)
 
 ## Description
 
