@@ -19,4 +19,5 @@ The sample CAD assets are collected from publicly available data (e.g. from [gra
 ## Processing Samples
 
 The processing samples can be found in the respective [sub-directory](./workflows/workflow-overview.md) and correspond to each identified step in the CAD Dataprep and 3D Processing Pipeline needed to go from a "raw" parametric CAD dataset to CGI and real-time render-ready 3D data set.  
-Each sample was selected to present one or more challenges during that process. Furthermore the given sample assets were selected to present a wide range of complexity - leaning more towards actual stand-ins for "real-world" CAD data rather than simplified minimalistic samples.
+  
+Each sample was selected to present one or more challenges during that process. Furthermore the given sample assets were selected to present a wide range of complexity - leaning more towards actual stand-ins for "real-world" CAD data rather than simplified minimalistic samples.  
