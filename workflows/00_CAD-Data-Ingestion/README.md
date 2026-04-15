@@ -66,11 +66,9 @@ However, there are a lot more options for 3D processing. More about combining mo
 
 Please see below some basic explanation for each setting and links to the respective sections of the RapidPipeline Documentation:  
 
-#### Tessellation Resolution
+#### [Tessellation Resolution](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#tessellation-resolution)
 
 Tessellation resolution for imported CAD surfaces.  
-
-[More about Tessellation Resolution Settings in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#tessellation-resolution).  
 
 #### Sewing Tolerance
 
