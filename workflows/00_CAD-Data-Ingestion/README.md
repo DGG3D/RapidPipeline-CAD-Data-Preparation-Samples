@@ -14,6 +14,13 @@
 3. Get the respective .json settings configuration file further below and make sure input file as well as .json file are present  
 4. Run the command listed below in your favorite commandline (e.g. windows powershell)
 
+### Example Files
+
+[EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)
+
+
+[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)
+
 ### Commands
 
 ```
