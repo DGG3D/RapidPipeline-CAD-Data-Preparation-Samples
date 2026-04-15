@@ -18,11 +18,11 @@
 
 [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)
-<img src="../../sample-assetsEG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">
+<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">
 
 [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)
-<img src="../../sample-assetsno.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">
+<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">
 
 ### Commands
 
