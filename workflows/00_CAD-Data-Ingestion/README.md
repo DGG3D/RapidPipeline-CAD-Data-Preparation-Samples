@@ -64,37 +64,34 @@ However, there are a lot more options for 3D processing. More about combining mo
 
 ### Settings - Main Concepts
 
-Please see below some basic explanation for each setting and links to the respective sections of the RapidPipeline Documentation:  
+Please see below some basic explanation for each setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
 #### [Tessellation Resolution](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#tessellation-resolution)
 
-Tessellation resolution for imported CAD surfaces.  
+Tessellation resolution for imported CAD surfaces. By default these are presets such as `coarse` and `fine`. The `custom` options enables further control via the `Maximum Surface Deviation`, `Angle`, `EdgeLength` settings.  
 
-#### Sewing Tolerance
+#### [Sewing Tolerance](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-sewing-tolerance)
 
 Tolerance for the sewing operation on the b-reps before tessellation.  
 
-[More about Sewing Tolerance in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-sewing-tolerance).  
-
-#### Removal of T-Junctions
+#### [Removal of T-Junctions](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-remove-t-junctions)
 
 Attempts to remove T-Junctions after CAD tessellation.  
 
-[More about Removal of T-Junctions in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-remove-t-junctions).  
 
-#### Maximum Surface Deviation, Angle, EdgeLength
+#### [Maximum Surface Deviation, Angle, EdgeLength](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#expert-tessellation-settings)
 
 - Surface Deviation = Maximum distance between the CAD surface and the tessellation in mm (sometimes also referred to as "Chord Height")  
+
 - Maximum Angle = Decreasing the max angle generates more faces in high curvature areas, such as fillets for example  
+
 - Maximum Edge Length = Controls the maximum length of edges per face. Caution, as the value is absolute (mm), large parts might become overtessellated, including flat surfaces  
 
-[More about Maximum Surface Deviation, Angle, EdgeLength in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#expert-tessellation-settings).  
 
-#### Rotate Z-Up to Y-Up
+#### [Rotate Z-Up to Y-Up](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#convert-z-up-to-y-up)
 
 Turns rotation to z-axis pointing upwards on/off
 
-[More about Rotate Z-Up to Y-Up in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#convert-z-up-to-y-up).  
 
 ### Download or copy the settings file
 
