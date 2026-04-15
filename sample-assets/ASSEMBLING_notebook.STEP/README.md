@@ -1,20 +1,27 @@
-# WRE 45 ASS TOTAL.x_t
+# ASSEMBLING_notebook.STEP
 
 ## Summary
 
-refrigerator WRE45 Brastemp Gourmand
+LAPTOP S1
 
 ## Link
 
-https://grabcad.com/library/refrigerator-wre45-1
+https://grabcad.com/library/laptop-s1-1
 
 ## Screenshots
 
-![screenshot](<screenshot/WRE 45 ASS TOTAL.x_t.jpg>)
+![screenshot](<screenshot/ASSEMBLING_notebook.jpg>)
 
 ## Description
 
-refrigerator WRE45 Brastemp Gourmand
+Intel Core i7
+DIMM DDR4 3200MHz CRUCIAL 16x2 Gb
+NVIDIA GeForce RTX3070 8GB GDDR6
+ssd m2 nvme Kingston KC3000 2Tb
+Intel Wi-Fi 6E AX210(2*2) | BT 5.2
+USB-C x4
+HDMI
+battery 180Wh (up to 12 hours of continuous operation)
 
 ## Purpose
 
@@ -23,7 +30,7 @@ This sample CAD asset demonstrates ...
 
 ## Author
 
-Gean Hay - https://grabcad.com/gean.hay-3 
+nick noname - https://grabcad.com/nick.noname-2 
 
 ## Legal
 
