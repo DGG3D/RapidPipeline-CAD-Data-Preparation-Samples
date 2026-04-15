@@ -1,36 +1,100 @@
-# Title
+# CAD Data Ingestion
 
 ## Description
 
-...
+This first workflow section is all about how to ingest (import) CAD data into the RapidPipeline Software.  
+That process is not merely a simple file import but instead the conversion between parametric surface (CAD) and polygonal meshes (triangles, quads, etc.) is addressed.  
+Therefore RapidPipeline offers lots of settings to fine-tune the CAD Ingestion process, while offering reasonable defaults which will make sure any CAD file can be imported and displayed as a mesh as a baseline.  
+
+Please see more information regarding the individual settings in the respective section further below.  
+
+### Example Files
+
+#### Simple Example File
+[EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
+[Download Link](https://grabcad.com/library/eg43-17-hg-1)  
+<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">  
+
+#### Complex Example File
+[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
+[Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
+<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
+
+## Sample Results
+
+The exemplatory sample results can be found within the [sub-directory here](./sample-results)
 
 ## Steps to Reproduce
+
+In order to reproduce the given results please follow the steps below:
 
 ### 3D Processor CLI
 
 1. [Install and set-up the RapidPipeline 3D Processor CLI](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide)  
 	- Requires RapidPipeline enterprise plan or free enterprise trial to access the CLI ([Contact here](https://rapidpipeline.com/en/contact/))  
+	- Information regarding [latest version and changelog can be found here](https://docs.rapidpipeline.com/3d-processor-updates)  
 2. Download the respective example file for this tutorial. You can find the files in the [overview here](../README.md).  
 3. Get the respective .json settings configuration file further below and make sure input file as well as .json file are present  
-4. Run the command listed below in your favorite commandline (e.g. windows powershell)
+4. Run the command listed below in your favorite commandline (e.g. windows powershell), more about [3D Processor CLI commands here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#commands-guide)  
 
-### Example Files
+Further information regarding [CAD import settings](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-import-settings) in the [RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/3d-processor-overview) and [Tutorials](https://docs.rapidpipeline.com/docs/3dProcessor-Tutorials/tutorial-cli-cad).  
 
-[EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
-[Download Link](https://grabcad.com/library/eg43-17-hg-1)  
-<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">  
-
-[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
-[Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
-<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
-
-### Commands
+## Commands
 
 ```
-rpdx -i 
+rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
 ```
 
-#### Settings File
+Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats though](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support).  
+The 3D Processor CLI will automatically create a default output folder if the run command `-r` is used. In order to define a specific output path the command `-o` can be utilized instead. Read more about [file exports with the CLI here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-a-3d-file).  
+Alternatively the export command `-e` can be used to generate any output path or file format.  Read more about the [export command here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-via-command).  
+
+## Settings File
+
+The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
+It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
+
+In this example we are only making use of the `Import` and `Export` sections (`objects`).  
+However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
+
+
+### Settings - Main Concepts
+
+Please see below some basic explanation for each setting and links to the respective sections of the RapidPipeline Documentation:  
+
+#### Tessellation Resolution
+
+Tessellation resolution for imported CAD surfaces.  
+
+[More about Tessellation Resolution Settings in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#tessellation-resolution).  
+
+#### Sewing Tolerance
+
+Tolerance for the sewing operation on the b-reps before tessellation.  
+
+[More about Sewing Tolerance in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-sewing-tolerance).  
+
+#### Removal of T-Junctions
+
+Attempts to remove T-Junctions after CAD tessellation.  
+
+[More about Removal of T-Junctions in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-remove-t-junctions).  
+
+#### Maximum Surface Deviation, Angle, EdgeLength
+
+- Surface Deviation = Maximum distance between the CAD surface and the tessellation in mm (sometimes also referred to as "Chord Height")  
+- Maximum Angle = Decreasing the max angle generates more faces in high curvature areas, such as fillets for example  
+- Maximum Edge Length = Controls the maximum length of edges per face. Caution, as the value is absolute (mm), large parts might become overtessellated, including flat surfaces  
+
+[More about Maximum Surface Deviation, Angle, EdgeLength in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#expert-tessellation-settings).  
+
+#### Rotate Z-Up to Y-Up
+
+Turns rotation to z-axis pointing upwards on/off
+
+[More about Rotate Z-Up to Y-Up in the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#convert-z-up-to-y-up).  
+
+### Download or copy the settings file
 
 [CAD-ingestion.json](CAD-ingestion.json)
 
