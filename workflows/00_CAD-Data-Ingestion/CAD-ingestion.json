@@ -1,30 +1,3 @@
-# Title
-
-## Description
-
-...
-
-## Steps to Reproduce
-
-### 3D Processor CLI
-
-1. [Install and set-up the RapidPipeline 3D Processor CLI](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide)  
-	- Requires RapidPipeline enterprise plan or free enterprise trial to access the CLI ([Contact here](https://rapidpipeline.com/en/contact/))  
-2. Download the respective example file for this tutorial. You can find the files in the [overview here](../README.md).  
-3. Get the respective .json settings configuration file further below and make sure input file as well as .json file are present  
-4. Run the command listed below in your favorite commandline (e.g. windows powershell)
-
-### Commands
-
-```
-rpdx -i 
-```
-
-#### Settings File
-
-[CAD-ingestion.json](CAD-ingestion.json)
-
-```
 {
     "import": {
       "CAD": {
@@ -61,4 +34,3 @@ rpdx -i
         }
   ]
 }
-```
