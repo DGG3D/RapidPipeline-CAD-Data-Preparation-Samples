@@ -21,6 +21,8 @@ Please see more information regarding the individual settings in the respective 
 
 The exemplatory sample results can be found within the [sub-directory here](./sample-results)
 
+<img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">  
+
 ## Steps to Reproduce
 
 In order to reproduce the given results please follow the steps below:
