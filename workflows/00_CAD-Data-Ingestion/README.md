@@ -4,11 +4,11 @@
 
 This first workflow section is all about how to ingest (import) CAD data into the RapidPipeline Software.  
 
-That process is not merely a simple file import but instead the conversion between parametric surface (CAD) and polygonal meshes (triangles, quads, etc.) is addressed.  
+That process is not merely a simple file import but instead a complex conversion from parametric surface (CAD) to polygonal mesh data (triangles, quads, etc.).  
 
-Therefore RapidPipeline offers lots of settings to fine-tune the CAD Ingestion process, while offering reasonable defaults which will make sure any CAD file can be imported and displayed as a mesh as a baseline.  
+RapidPipeline offers lots of settings to fine-tune the CAD Ingestion process, while offering reasonable defaults which will make sure any CAD file can be imported and displayed as a mesh as a baseline.  
 
-Please see more information regarding the individual settings in the respective section further below.  
+Please see more information regarding the individual settings in the respective sections further below.  
 
 ### Example Files
 
