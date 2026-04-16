@@ -37,16 +37,16 @@ Further information regarding [Mesh Cleanup (3D Edit) Settings](https://docs.rap
 
 ## Commands
 
-### Normal Recalculation & Removal of Duplicated Vertices
+### Normal Recalculation
 
 ```
-rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
+rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly.x_t' -r
 ```
 
 ### Winding Order Correction
 
 ```
-rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
+rpdx --read_config cleanup-windingOrder.json -i 'Robot rv.IGS' -r
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
@@ -60,44 +60,77 @@ Alternatively the export command `-e` can be used to generate any output path or
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
 It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
-In this example we are only making use of the `Import` and `Export` sections (`objects`).  
+In this example we are only making use of the `Import`, `3D Edit` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
 
-### Settings - Main Concepts
+## Features & Settings - Main Concepts
 
-Please see below some basic explanation for each setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
+Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
-#### [Tessellation Resolution](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#tessellation-resolution)
+### [Normal (Re)computation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#mesh-normals)
 
-Tessellation resolution for imported CAD surfaces. By default these are presets such as `coarse` and `fine`. The `custom` options enables further control via the `Maximum Surface Deviation`, `Angle`, `EdgeLength` settings.  
+Mesh normals control the shading of meshes. There are two controls: the Normal Hard Angle Threshold, and the Normal Computation Method. These settings are applied just after Import.  
 
-#### [Sewing Tolerance](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-sewing-tolerance)
+#### [Recompute Input Normals](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#mesh-normals)
 
-Tolerance for the sewing operation on the b-reps before tessellation.  
+Discards the original normals and recomputes them.  
 
-#### [Removal of T-Junctions](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#cad-remove-t-junctions)
+#### [Normal Hard Angle Threshold (Degrees)](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#normal-hard-angle-threshold)
 
-Attempts to remove T-Junctions after CAD tessellation.  
+Hard threshold (degrees) used for normal generation (0 = everything flat, 180 = everything smooth)  
 
+#### [Normal Computation Method](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#normal-computation-method)
 
-#### [Maximum Surface Deviation, Angle, EdgeLength](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#expert-tessellation-settings)
-
-- Surface Deviation = Maximum distance between the CAD surface and the tessellation in mm (sometimes also referred to as "Chord Height")  
-
-- Maximum Angle = Decreasing the max angle generates more faces in high curvature areas, such as fillets for example  
-
-- Maximum Edge Length = Controls the maximum length of edges per face. Caution, as the value is absolute (mm), large parts might become overtessellated, including flat surfaces  
+The method affects how the angles of the normals for soft edges are handled.  
 
 
-#### [Rotate Z-Up to Y-Up](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#convert-z-up-to-y-up)
+### [Vertex Merging](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
-Turns rotation to z-axis pointing upwards on/off
+Note: Removal of duplicated vertices is always automated within the 3D Processor.  
+
+#### [Vertex Merging Per Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
+
+Vertex Merging Per Mesh decides if vertex merging should only be performed within each mesh node (on) or across all nodes (off). 
+
+#### [Vertex Merging Distance Percentage](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
+
+Merges close vertices with a given threshold in percentage.  
+
+#### [Vertex Merging Distance Value](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
+
+Merges close vertices with a given threshold as absolute value (meters).  
+
+#### [Merge Meshes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
+
+The merge meshes option allowes for the different meshes of merged vertices to be actually merged (vertices are welded) together.  
+
+
+
+### [Fix Winding Order](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
+
+Automatically fix the winding order of parts on import.  
+
+#### [Visibility Mode](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
+
+Set how visibility is computed  
+- default: Triangle facing is checked on a global basis. This is the default value  
+- mesh: Triangle facing is checked individually per mesh node  
+
+#### [Winding Order Ignore Transparency](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
+
+Decides whether visibility includes non-opaque meshes.  
+
+#### [Winding Order Per Lump](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
+
+Decides whether winding order of whole (mesh) lumps of geometry are flipped as one or per triangle.  
 
 
 ### Download or copy the settings file
 
-[CAD-ingestion.json](CAD-ingestion.json)
+#### Normal Recalculation
+
+[cleanup-normals.json](cleanup-normals.json)
 
 ```
 {
@@ -114,6 +147,74 @@ Turns rotation to z-axis pointing upwards on/off
       "rotateZUp": false
       }
     },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 60.0,
+      "computationMethod": "area"
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+#### Winding Order Correction
+
+[cleanup-windingOrder.json](cleanup-windingOrder.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": false
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair": {
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
+  },
     "export": [
         {
             "discard": {
