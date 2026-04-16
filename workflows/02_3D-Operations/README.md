@@ -6,9 +6,9 @@ This section is about ...
 
 ### Example Files
 
-[28L Storage Box - Assembly.x_t](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>)  
+[ASSEMBLING_notebook.STEP](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-<img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="400">  
+<img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="400">  
 
 [Cordless Drill DeWalt DCD791_variation01-standard.3dm](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
 [Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)  
@@ -43,13 +43,29 @@ Further information regarding 3D Operations ([Mesh Culling](https://docs.rapidpi
 ### Mesh Culling
 
 ```
-rpdx --read_config mesh-culling.json -i '28L Storage Box - Assembly.x_t' -r
+rpdx --read_config mesh-culling.json -i 'ASSEMBLING_notebook.STEP' -r -o output_mesh-culling
+```
+
+```
+rpdx --read_config mesh-culling.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_mesh-culling
+```
+
+```
+rpdx --read_config mesh-culling.json -i 'WRE 45 ASS TOTAL.x_t' -r -o output_mesh-culling
 ```
 
 ### Scene Graph Flattening
 
 ```
-rpdx --read_config flattening.json -i 'Robot rv.IGS' -r
+rpdx --read_config flattening.json -i 'ASSEMBLING_notebook.STEP' -r -o output_flattening
+```
+
+```
+rpdx --read_config flattening.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_flattening
+```
+
+```
+rpdx --read_config flattening.json -i 'WRE 45 ASS TOTAL.x_t' -r -o output_flattening
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
