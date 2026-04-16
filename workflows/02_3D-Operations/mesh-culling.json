@@ -1,0 +1,54 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "meshCulling": {
+    "occlusionCulling": {
+      "perMesh": false,
+      "quality": "default",
+      "ignoreTransparency": false,
+      "diffusion": "none",
+      "runAfterDecimator": false,
+      "sampleEdges": true,
+      "perLumpDecision" : false,
+      "lumpThreshold": 0.1
+    },
+    "smallFeatureCulling": {
+      "sizeThreshold": {
+        "percentage": 0.01
+      },
+      "runAfterDecimator": false
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
