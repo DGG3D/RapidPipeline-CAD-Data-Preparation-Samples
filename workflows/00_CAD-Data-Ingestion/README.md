@@ -12,15 +12,10 @@ Please see more information regarding the individual settings in the respective 
 
 ### Example Files
 
-#### Simple Example File
 [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)  
 <img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">  
 
-#### Complex Example File
-[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
-[Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
-<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
 
 ## Sample Results
 
@@ -46,6 +41,7 @@ Further information regarding [CAD import settings](https://docs.rapidpipeline.c
 ```
 rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
 ```
+
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
 
@@ -92,6 +88,9 @@ Attempts to remove T-Junctions after CAD tessellation.
 
 Turns rotation to z-axis pointing upwards on/off
 
+#### Export Tris to Quads
+
+For this simple CAD to mesh conversion, we enabled tris to quads conversion for the output data. This is currently only supported for `.usd` formats.
 
 ### Download or copy the settings file
 
@@ -124,7 +123,7 @@ Turns rotation to z-axis pointing upwards on/off
                 }
             }, 
             "trisToQuads" : {
-                "enable" : false
+                "enable" : true
             },
             "optimizeFaceOrder": true, 
             "preserveTextureFilenames": false, 

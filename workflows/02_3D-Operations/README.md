@@ -2,7 +2,7 @@
 
 ## Description
 
-This section is about ...
+This section is about further 3D processing operations as optional processes which can help with complex data sets by removing invisible or small geometry as well as flattening nodes, meshes or materials.  
 
 ### Example Files
 
@@ -47,25 +47,27 @@ rpdx --read_config mesh-culling.json -i 'ASSEMBLING_notebook.STEP' -r -o output_
 ```
 
 ```
-rpdx --read_config mesh-culling.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_mesh-culling
-```
-
-```
-rpdx --read_config mesh-culling.json -i 'WRE 45 ASS TOTAL.x_t' -r -o output_mesh-culling
+rpdx --read_config mesh-culling.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_mesh-culling
 ```
 
 ### Scene Graph Flattening
+
+#### Simple flattening by Material
 
 ```
 rpdx --read_config flattening.json -i 'ASSEMBLING_notebook.STEP' -r -o output_flattening
 ```
 
 ```
-rpdx --read_config flattening.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_flattening
+rpdx --read_config flattening.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_flattening
 ```
 
+### Combined workflows
+
+Utilizing normal recalculation from previous workflow combined with `mesh culling` as well as `scene graph flattening`:
+
 ```
-rpdx --read_config flattening.json -i 'WRE 45 ASS TOTAL.x_t' -r -o output_flattening
+rpdx --read_config combined-workflow.json -i 'WRE 45 ASS TOTAL.x_t' -r -e 'output_combined-workflow/WRE 45 ASS TOTAL.usd'
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
@@ -73,6 +75,8 @@ Note: Within the configuration .json settings files in this repository only `usd
 The 3D Processor CLI will automatically create a default output folder if the run command `-r` is used. In order to define a specific output path the command `-o` can be utilized instead. Read more about [file exports with the CLI here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-a-3d-file).  
 
 Alternatively the export command `-e` can be used to generate any output path or file format.  Read more about the [export command here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-via-command).  
+
+Multiple settings files can be combined as seen in the second command line example above. At least one of the configuration files needs to delare an output format within the `export` section (unless the `-e` command is utilized).  
 
 ## Settings File
 

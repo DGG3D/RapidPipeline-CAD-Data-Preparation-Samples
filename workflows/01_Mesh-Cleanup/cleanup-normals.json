@@ -1,7 +1,7 @@
 {
     "import": {
       "CAD": {
-        "tessellationResolution":"custom", 
+        "tessellationResolution":"extraFine", 
         "sewTolerance": 0.05, 
         "removeTJunctions": true,
         "maxSurfaceDeviation": 0.05,
@@ -20,6 +20,14 @@
     },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
+    },
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      }
     }
   },
     "export": [

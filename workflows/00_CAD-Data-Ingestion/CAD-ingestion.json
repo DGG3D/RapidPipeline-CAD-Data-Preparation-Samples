@@ -12,6 +12,16 @@
       "rotateZUp": false
       }
     },
+  "3dEdit": {
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      }
+    }
+},
     "export": [
         {
             "discard": {
@@ -24,7 +34,7 @@
                 }
             }, 
             "trisToQuads" : {
-                "enable" : false
+                "enable" : true
             },
             "optimizeFaceOrder": true, 
             "preserveTextureFilenames": false, 

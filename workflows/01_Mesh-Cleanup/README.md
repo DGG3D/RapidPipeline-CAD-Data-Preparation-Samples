@@ -16,6 +16,10 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
 <img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">  
 
+[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
+[Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
+<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
+
 ## Sample Results
 
 The exemplatory sample results can be found within the [sub-directory here](./sample-results)
@@ -40,7 +44,13 @@ Further information regarding [Mesh Cleanup (3D Edit) Settings](https://docs.rap
 ### Normal Recalculation
 
 ```
-rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly.x_t' -r
+rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly (Sterilite UltraLatch 1985LAB86).x_t' -r
+```
+
+### Vertex Merging
+
+```
+rpdx --read_config vertex-merging.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r
 ```
 
 ### Winding Order Correction
@@ -49,11 +59,19 @@ rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly.x_t' -r
 rpdx --read_config cleanup-windingOrder.json -i 'Robot rv.IGS' -r
 ```
 
+#### Utilizing both Vertex Merging and Winding Order Correction
+
+```
+rpdx --read_config vertex-merging.json --read_config cleanup-windingOrder.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r -e 'output_multiple-methods/no.468 gt4rs.usd'
+```
+
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
 
 The 3D Processor CLI will automatically create a default output folder if the run command `-r` is used. In order to define a specific output path the command `-o` can be utilized instead. Read more about [file exports with the CLI here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-a-3d-file).  
 
 Alternatively the export command `-e` can be used to generate any output path or file format.  Read more about the [export command here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-via-command).  
+
+Multiple settings files can be combined as seen in the second and fourth command line examples above. At least one of the configuration files needs to delare an output format within the `export` section (unless the `-e` command is utilized).  
 
 ## Settings File
 
@@ -87,7 +105,7 @@ The method affects how the angles of the normals for soft edges are handled.
 
 ### [Vertex Merging](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
-Note: Removal of duplicated vertices is always automated within the 3D Processor.  
+Note: Removal of duplicated vertices is performed if the vertex merging distance is set to `0`.  
 
 #### [Vertex Merging Per Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
@@ -155,6 +173,62 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
     },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+#### Vertex Merging
+
+[vertex-merging.json](vertex-merging.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "3dEdit": {
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.005
+        },
+        "perMesh": false 
+      }
     }
   },
     "export": [

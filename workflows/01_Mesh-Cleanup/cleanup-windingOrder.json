@@ -39,7 +39,7 @@
                 }
             }, 
             "trisToQuads" : {
-                "enable" : false
+                "enable" : true
             },
             "optimizeFaceOrder": true, 
             "preserveTextureFilenames": false, 
