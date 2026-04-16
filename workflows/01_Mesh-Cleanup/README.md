@@ -12,10 +12,6 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
 <img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="400">  
 
-[Cordless Drill DeWalt DCD791_variation01-standard.3dm](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
-[Download](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>) 
-<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">  
-
 [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
 [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
 <img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">  
@@ -40,6 +36,14 @@ In order to reproduce the given results please follow the steps below:
 Further information regarding [Mesh Cleanup (3D Edit) Settings](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings) in the [RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/3d-processor-overview).  
 
 ## Commands
+
+### Normal Recalculation & Removal of Duplicated Vertices
+
+```
+rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
+```
+
+### Winding Order Correction
 
 ```
 rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
