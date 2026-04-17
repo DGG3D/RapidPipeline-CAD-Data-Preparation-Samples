@@ -21,11 +21,11 @@ The exemplatory sample results can be found within the [sub-directory here](./sa
 
 <img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-shaded.jpg" width="400">  
 <img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-wire.jpg" width="400">  
-Cooper CAD refined.step decimated to 500,000 faces
-
+Cooper CAD refined.step decimated to 500,000 faces  
+<br>
 <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400">  
 <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400">  
-no.468 gt4rs.stp decimated to 500,000 faces
+no.468 gt4rs.stp decimated to 500,000 faces  
 
 ## Steps to Reproduce
 
