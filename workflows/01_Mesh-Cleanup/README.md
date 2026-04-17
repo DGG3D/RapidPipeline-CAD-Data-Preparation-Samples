@@ -4,7 +4,7 @@
 
 This section is about cleaning up and repairing the tessellated 3D model to get a solid basis for further processing and workflows.  
 
-Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described in this repositry can be found under the [3D Edit](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings) section.  
+Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described in this repository can be found under the [3D Edit](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings) section.  
 
 ### Example Files
 
@@ -26,7 +26,7 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 ## Sample Results
 
-The exemplatory sample results can be found within the [sub-directory here](./sample-results)  
+The sample results can be found within the [sub-directory here](./sample-results)  
 
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 <img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400">  
@@ -91,12 +91,12 @@ The 3D Processor CLI will automatically create a default output folder if the ru
 
 Alternatively the export command `-e` can be used to generate any output path or file format.  Read more about the [export command here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-via-command).  
 
-Multiple settings files can be combined as seen in the second and fourth command line examples above. At least one of the configuration files needs to delare an output format within the `export` section (unless the `-e` command is utilized).  
+Multiple settings files can be combined as seen in the second and fourth command line examples above. At least one of the configuration files needs to declare an output format within the `export` section (unless the `-e` command is utilized).  
 
 ## Settings File
 
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
-It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
+It is following `.json` syntax and is validated against the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
 In this example we are only making use of the `Import`, `3D Edit` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
@@ -141,7 +141,7 @@ Merges close vertices with a given threshold as absolute value (meters).
 
 #### [Merge Meshes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
-The merge meshes option allowes for the different meshes of merged vertices to be actually merged (vertices are welded) together.  
+The merge meshes option allows for the different meshes of merged vertices to be actually merged (vertices are welded) together.  
 
 
 

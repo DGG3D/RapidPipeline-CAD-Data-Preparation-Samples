@@ -17,7 +17,7 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 
 ## Sample Results
 
-The exemplatory sample results can be found within the [sub-directory here](./sample-results)  
+The sample results can be found within the [sub-directory here](./sample-results)  
 
 Cooper CAD refined.step decimated to 500,000 faces:  
 <img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-shaded.jpg" width="400">  
@@ -74,7 +74,7 @@ Alternatively the export command `-e` can be used to generate any output path or
 ## Settings File
 
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
-It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
+It is following `.json` syntax and is validated against the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
 In this example we are only making use of the `Import`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
