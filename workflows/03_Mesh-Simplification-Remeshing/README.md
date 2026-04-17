@@ -13,7 +13,7 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 
 [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
 [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
-<img src="../../sample-assets/Cooper CAD refined.step/screenshot/Cooper CAD refined.jpg" width="400">  
+<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">  
 
 [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
