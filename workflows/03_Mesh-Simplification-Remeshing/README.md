@@ -9,15 +9,15 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 
 [BOX W HINGES 302020 - TEST.stp](<../../sample-assets/BOX W HINGES 302020 - TEST.stp/README.md>)  
 [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-<img src="../../sample-assets/BOX W HINGES 302020 - TEST.stp/screenshot/BOX W HINGES 302020 - TEST.jpg" width="400">  
+[<img src="../../sample-assets/BOX W HINGES 302020 - TEST.stp/screenshot/BOX W HINGES 302020 - TEST.jpg" width="400">](<../../sample-assets/BOX W HINGES 302020 - TEST.stp/README.md>)  
 
 [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
 [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
-<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">  
+[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>)  
 
 [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
-<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
+[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 
 ## Sample Results
 

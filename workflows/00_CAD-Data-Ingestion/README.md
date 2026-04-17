@@ -14,7 +14,7 @@ Please see more information regarding the individual settings in the respective 
 
 [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)  
-<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">  
+[<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 
 
 ## Sample Results

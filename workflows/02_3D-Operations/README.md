@@ -8,15 +8,15 @@ This section is about further 3D processing operations as optional processes whi
 
 [ASSEMBLING_notebook.STEP](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-<img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="400">  
+<[img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="400">](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)  
 
 [Cordless Drill DeWalt DCD791_variation01-standard.3dm](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
 [Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)  
-<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">  
+[<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
 
 [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
 [Download Link](https://grabcad.com/library/refrigerator-wre45-1)  
-<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400"> 
+[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
 
 
 ## Sample Results

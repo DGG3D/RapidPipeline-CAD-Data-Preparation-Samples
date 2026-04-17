@@ -14,11 +14,11 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
 [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
-<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">  
+[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>)  
 
 [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
-<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">  
+[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 
 ## Sample Results
 
