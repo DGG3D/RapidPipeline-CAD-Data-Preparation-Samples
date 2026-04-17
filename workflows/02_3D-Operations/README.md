@@ -14,10 +14,6 @@ This section is about further 3D processing operations as optional processes whi
 [Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)  
 [<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
 
-[WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
-[Download Link](https://grabcad.com/library/refrigerator-wre45-1)  
-[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
-
 
 ## Sample Results
 
@@ -28,11 +24,7 @@ ASSEMBLING_notebook.STEP culled interior and small geometry:
 <br>
 Cordless Drill DeWalt DCD791_variation01-standard.3dm culled interior and small geometry:  
 <img src="sample-results/screenshot/Cordless Drill DeWalt DCD791_variation01-standard_mesh-culling.jpg" width="400">  
-<br>
-WRE 45 ASS TOTAL.x_t culled interior and small geometry and recalculated mesh normals:  
-<img src="sample-results/screenshot/WRE 45 ASS TOTAL_mesh-culling.jpg" width="400">  
-<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400">  
-<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation-wire.jpg" width="400">  
+
 
 ## Steps to Reproduce
 
@@ -71,14 +63,6 @@ rpdx --read_config flattening.json -i 'ASSEMBLING_notebook.STEP' -r -o output_fl
 
 ```
 rpdx --read_config flattening.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_flattening
-```
-
-### Combined workflows
-
-Utilizing normal recalculation from previous workflow combined with `mesh culling` as well as `scene graph flattening`:
-
-```
-rpdx --read_config combined-workflow.json -i 'WRE 45 ASS TOTAL.x_t' -r -e 'output_combined-workflow/WRE 45 ASS TOTAL.usd'
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  

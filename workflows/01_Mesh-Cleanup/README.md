@@ -20,6 +20,10 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
 [<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 
+[WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
+[Download Link](https://grabcad.com/library/refrigerator-wre45-1)  
+[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)  
+
 ## Sample Results
 
 The exemplatory sample results can be found within the [sub-directory here](./sample-results)  
@@ -27,6 +31,11 @@ The exemplatory sample results can be found within the [sub-directory here](./sa
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 <img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400">  
 <br>
+WRE 45 ASS TOTAL.x_t Merged Vertices & recalculated mesh normals:  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400">  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation-wire.jpg" width="400">  
+WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](../../sample-assets/WRE 45 ASS TOTAL.x_t/README.MD#purpose)):  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400">  
 
 ## Steps to Reproduce
 
@@ -63,11 +72,18 @@ rpdx --read_config vertex-merging.json --read_config rotateZUp.json -i 'no.468 g
 rpdx --read_config cleanup-windingOrder.json -i 'Robot rv.IGS' -r
 ```
 
-#### Utilizing both Vertex Merging and Winding Order Correction
+#### Utilizing Vertex Merging and Winding Order Correction
 
 ```
-rpdx --read_config vertex-merging.json --read_config cleanup-windingOrder.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r -e 'output_multiple-methods/no.468 gt4rs.usd'
+rpdx --read_config vertex-merging.json --read_config cleanup-windingOrder.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r -e 'output_VertMergWindOrder/no.468 gt4rs.usd'
 ```
+
+#### Utilizing Normal Recalculation, Vertex Merging and Winding Order Correction
+
+```
+rpdx --read_config combined-workflow.json -i 'WRE 45 ASS TOTAL.x_t' -r -e 'output_normalRecVertMergWindOrder/WRE 45 ASS TOTAL.usd'
+```
+
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
 
@@ -286,6 +302,72 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
         "splitMultiMaterialMeshes": true
     },
     "repair": {
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+#### Combined Workflow
+
+[combined-workflow.json](combined-workflow.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"extraFine", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 60.0,
+      "computationMethod": "area"
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": false
+    },
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      },
       "windingOrder": {
         "visibilityMode": "default",
         "ignoreTransparency" : false,
