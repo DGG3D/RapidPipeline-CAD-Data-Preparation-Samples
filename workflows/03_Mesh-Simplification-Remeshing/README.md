@@ -79,12 +79,12 @@ It is following `.json` syntax and is validated agains the [RapidPipeline 3D Pro
 In this example we are only making use of the `Import`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-
+<!-- 
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
-<!-- 
+
 
 ### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
 
