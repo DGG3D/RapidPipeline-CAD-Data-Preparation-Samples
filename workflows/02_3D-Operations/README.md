@@ -23,6 +23,17 @@ This section is about further 3D processing operations as optional processes whi
 
 The exemplatory sample results can be found within the [sub-directory here](./sample-results)
 
+ASSEMBLING_notebook.STEP culled interior and small geometry:  
+<img src="sample-results/screenshot/ASSEMBLING_notebook_mesh-culling.jpg" width="400">  
+<br>
+Cordless Drill DeWalt DCD791_variation01-standard.3dm culled interior and small geometry:  
+<img src="sample-results/screenshot/Cordless Drill DeWalt DCD791_variation01-standard_mesh-culling.jpg" width="400">  
+<br>
+WRE 45 ASS TOTAL.x_t culled interior and small geometry and recalculated mesh normals:  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_mesh-culling.jpg" width="400">  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400">  
+<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation-wire.jpg" width="400">  
+
 ## Steps to Reproduce
 
 In order to reproduce the given results please follow the steps below:
