@@ -14,7 +14,9 @@
     },
   "3dEdit": {
     "meshNormals": {
-      "recomputeInputNormals": false
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 60.0,
+      "computationMethod": "area"
     },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
@@ -30,47 +32,26 @@
     "optimize": {
         "3dModelOptimizationMethod": {
             "meshAndMaterialOptimization": {
-                "decimator": {
-                    "materialOptimization": {
+                "remesher": {
                       "materialMerger": {
                         "materialRegenerator": {
                           "uvAtlasGenerator": {
                             "textureBaker": {
                               "bakingResolution": {
                                 "default": 0
-                              },
-                              "sampleCount": 4,
-                              "texMapAutoScaling": true,
-                              "bakeCombinedScene": false,
-                              "topologicalHolesToAlpha": false,
-                              "powerOfTwoResolution": "ceil",
-                              "inpaintingRadius": 32.0
-                            },
-                            "method": "packedCubeUVs",
-                            "segmentationCutAngle": 88.0,
-                            "segmentationChartAngle": 130.0,
-                            "maxAngleError": 114.0,
-                            "maxPrimitivesPerChart": 10000,
-                            "cutOverlappingPieces": true,
-                            "atlasMode": "separateMaterials",
-                            "allowRectangularAtlases": false,
-                            "packingResolution": 1024,
-                            "packingPixelDistance": 2,
-                            "atlasFactor": 1
+                              }
+                            }
                          }
                        }
-                     }
-                    },
+                     },
                     "target": {
                         "faces": {
-                            "value": 500000
-                        },
-                        "deviation": {
-                            "percentage": 0.005
+                            "value": 1000000
                         }
                     },
-                    "preserveNormals": true,
-                    "preserveTopology": false
+                    "method": "shrinkwrap",
+                    "resolution": 9,
+                    "filterBackProjected": true
                 }
             }
         }
@@ -79,7 +60,7 @@
         {
             "discard": {
                 "emptyNodes": true, 
-                "unusedUVs": false
+                "unusedUVs": true
             }, 
             "fileName": "", 
             "format": {
@@ -87,7 +68,7 @@
                 }
             }, 
             "trisToQuads" : {
-                "enable" : false
+                "enable" : true
             },
             "optimizeFaceOrder": true, 
             "preserveTextureFilenames": false, 

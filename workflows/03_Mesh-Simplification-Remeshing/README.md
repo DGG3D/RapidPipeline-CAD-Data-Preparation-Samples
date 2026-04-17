@@ -7,10 +7,6 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 
 ### Example Files
 
-[BOX W HINGES 302020 - TEST.stp](<../../sample-assets/BOX W HINGES 302020 - TEST.stp/README.md>)  
-[Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-[<img src="../../sample-assets/BOX W HINGES 302020 - TEST.stp/screenshot/BOX W HINGES 302020 - TEST.jpg" width="400">](<../../sample-assets/BOX W HINGES 302020 - TEST.stp/README.md>)  
-
 [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
 [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
 [<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>)  
@@ -22,6 +18,14 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 ## Sample Results
 
 The exemplatory sample results can be found within the [sub-directory here](./sample-results)
+
+<img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-shaded.jpg" width="400">  
+<img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-wire.jpg" width="400">  
+Cooper CAD refined.step decimated to 500,000 faces
+
+<img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400">  
+<img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400">  
+no.468 gt4rs.stp decimated to 500,000 faces
 
 ## Steps to Reproduce
 
@@ -46,14 +50,18 @@ Further information regarding Mesh Simplification ([Decimation](https://docs.rap
 rpdx --read_config decimation.json -i 'Cooper CAD refined.step' -r  
 ```
 
+#### Decimation - Combined Workflow
+
+Decimation combined with vertex merging and winding order correction:
+
 ```
-rpdx --read_config decimation.json -i 'no.468 gt4rs.stp' -r  
+rpdx --read_config decimation_combined-workflow.json -i 'no.468 gt4rs.stp' -r  
 ```
 
 ### Remeshing
 
 ```
-rpdx --read_config remeshing.json -i 'BOX W HINGES 302020 - TEST.stp' -r
+rpdx --read_config remeshing.json -i '' -r
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
@@ -138,13 +146,13 @@ Several methods are provided for controlling how nodes are combined. Material me
 #### [Preserved Scene Depth](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-flattening-settings#preserved-scene-depth-level)
 
 This number acts as an overall limit, preserving a minimum number of scene graph levels, by allowing some nodes to be combined while preserving others based on their level in the hierarchy.  
-
+-->
 
 ### Download or copy the settings file
 
-#### Mesh Culling
+#### Decimation
 
-[mesh-culling.json](mesh-culling.json)
+[decimation.json](decimation.json)
 
 ```
 {
@@ -161,24 +169,37 @@ This number acts as an overall limit, preserving a minimum number of scene graph
       "rotateZUp": false
       }
     },
-  "meshCulling": {
-    "occlusionCulling": {
-      "perMesh": false,
-      "quality": "default",
-      "ignoreTransparency": false,
-      "diffusion": "none",
-      "runAfterDecimator": false,
-      "sampleEdges": true,
-      "perLumpDecision" : false,
-      "lumpThreshold": 0.1
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": false
     },
-    "smallFeatureCulling": {
-      "sizeThreshold": {
-        "percentage": 0.01
-      },
-      "runAfterDecimator": false
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
     }
   },
+    "optimize": {
+        "3dModelOptimizationMethod": {
+            "meshAndMaterialOptimization": {
+                "decimator": {
+                    "materialOptimization": {
+                     "keepMaterialsUVs": {
+                        "forceNormalRebaking": false
+                      }
+                    },
+                    "target": {
+                        "faces": {
+                            "value": 500000
+                        },
+                        "deviation": {
+                            "percentage": 0.005
+                        }
+                    },
+                    "preserveNormals": true,
+                    "preserveTopology": false
+                }
+            }
+        }
+    },
     "export": [
         {
             "discard": {
@@ -203,9 +224,9 @@ This number acts as an overall limit, preserving a minimum number of scene graph
 }
 ```
 
-#### Winding Order Correction
+#### Decimation - Combined Workflow
 
-[flattening.json](flattening.json)
+[decimation_combined-workflow.json](decimation_combined-workflow.json)
 
 ```
 {
@@ -219,13 +240,53 @@ This number acts as an overall limit, preserving a minimum number of scene graph
         "maxEdgeLength": 0
       },
     "general": {
-      "rotateZUp": false
+      "rotateZUp": true
       }
     },
-  "sceneGraphFlattening": {
-    "method": "byMaterial",
-    "preservedSceneDepth": 0
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": false
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair": {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.01
+        },
+        "perMesh": false 
+      },
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
   },
+    "optimize": {
+        "3dModelOptimizationMethod": {
+            "meshAndMaterialOptimization": {
+                "decimator": {
+                    "materialOptimization": {
+                     "keepMaterialsUVs": {
+                        "forceNormalRebaking": false
+                      }
+                    },
+                    "target": {
+                        "faces": {
+                            "value": 500000
+                        },
+                        "deviation": {
+                            "percentage": 0.005
+                        }
+                    },
+                    "preserveNormals": true,
+                    "preserveTopology": false
+                }
+            }
+        }
+    },
     "export": [
         {
             "discard": {
@@ -247,5 +308,15 @@ This number acts as an overall limit, preserving a minimum number of scene graph
             "textureNamingScript": ""
         }
   ]
+}
+```
+
+#### Remeshing
+
+[remeshing.json](remeshing.json)
+
+```
+{
+
 }
 ```

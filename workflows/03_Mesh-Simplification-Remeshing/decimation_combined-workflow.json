@@ -1,0 +1,80 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": true
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": false
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair": {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.01
+        },
+        "perMesh": false 
+      },
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
+  },
+    "optimize": {
+        "3dModelOptimizationMethod": {
+            "meshAndMaterialOptimization": {
+                "decimator": {
+                    "materialOptimization": {
+                     "keepMaterialsUVs": {
+                        "forceNormalRebaking": false
+                      }
+                    },
+                    "target": {
+                        "faces": {
+                            "value": 500000
+                        },
+                        "deviation": {
+                            "percentage": 0.005
+                        }
+                    },
+                    "preserveNormals": true,
+                    "preserveTopology": false
+                }
+            }
+        }
+    },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}

@@ -18,13 +18,6 @@
     },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
-    },
-    "repair": {
-      "windingOrder": {
-        "visibilityMode": "default",
-        "ignoreTransparency" : false,
-        "perLump": true
-      }
     }
   },
     "optimize": {
@@ -32,34 +25,9 @@
             "meshAndMaterialOptimization": {
                 "decimator": {
                     "materialOptimization": {
-                      "materialMerger": {
-                        "materialRegenerator": {
-                          "uvAtlasGenerator": {
-                            "textureBaker": {
-                              "bakingResolution": {
-                                "default": 0
-                              },
-                              "sampleCount": 4,
-                              "texMapAutoScaling": true,
-                              "bakeCombinedScene": false,
-                              "topologicalHolesToAlpha": false,
-                              "powerOfTwoResolution": "ceil",
-                              "inpaintingRadius": 32.0
-                            },
-                            "method": "packedCubeUVs",
-                            "segmentationCutAngle": 88.0,
-                            "segmentationChartAngle": 130.0,
-                            "maxAngleError": 114.0,
-                            "maxPrimitivesPerChart": 10000,
-                            "cutOverlappingPieces": true,
-                            "atlasMode": "separateMaterials",
-                            "allowRectangularAtlases": false,
-                            "packingResolution": 1024,
-                            "packingPixelDistance": 2,
-                            "atlasFactor": 1
-                         }
-                       }
-                     }
+                     "keepMaterialsUVs": {
+                        "forceNormalRebaking": false
+                      }
                     },
                     "target": {
                         "faces": {
