@@ -22,7 +22,11 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 ## Sample Results
 
-The exemplatory sample results can be found within the [sub-directory here](./sample-results)
+The exemplatory sample results can be found within the [sub-directory here](./sample-results)  
+
+28L Storage Box - Assembly.x_t recalculated mesh normals:  
+<img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400">  
+<br>
 
 ## Steps to Reproduce
 
