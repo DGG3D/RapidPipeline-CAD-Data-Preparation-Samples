@@ -10,7 +10,7 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 [28L Storage Box - Assembly.x_t](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>)  
 [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-<img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="400">  
+[<img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="400">](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>)  
 
 [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
 [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
