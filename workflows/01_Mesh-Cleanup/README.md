@@ -34,7 +34,7 @@ The exemplatory sample results can be found within the [sub-directory here](./sa
 WRE 45 ASS TOTAL.x_t Merged Vertices & recalculated mesh normals:  
 <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400">  
 <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation-wire.jpg" width="400">  
-WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](../../sample-assets/WRE 45 ASS TOTAL.x_t/README.MD)):  
+WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.MD#purpose>)):  
 <img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400">  
 
 ## Steps to Reproduce
