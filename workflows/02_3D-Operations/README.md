@@ -119,7 +119,7 @@ When enabled, occluded triangles will be removed after decimation. Requires an O
 
 Control if neighbors of visible triangles are also flagged as visible.  
 
-#### [Sample Edges](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#sample-edges)
+#### [Sample Edges](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#visibility-sample-edges)
 
 Defines if edges should be sampled during visibility computation.  
 
