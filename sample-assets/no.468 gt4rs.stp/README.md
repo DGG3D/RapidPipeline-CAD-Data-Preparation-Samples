@@ -10,7 +10,9 @@ https://grabcad.com/library/porsche-718-cayman-gt4-rs-1
 
 ## Screenshots
 
-![screenshot](<screenshot/no.468 gt4rs.jpg>)
+![screenshot](<screenshot/no.468 gt4rs.jpg>)  
+
+![screenshot](<screenshot/no.468 gt4rs_explode.jpg>)  
 
 ## Description
 

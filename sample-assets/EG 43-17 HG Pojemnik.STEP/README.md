@@ -29,8 +29,8 @@ Colour silver grey similar RAL 7001
 
 ## Purpose
 
-This sample CAD asset demonstrates ...
-
+This sample CAD asset is suitable to oberve the effects of tessellation and different tessellation resolutions as well as settings.  
+It also contains more sharp / hard-surface shapes as well as some beveled and rounded shapes as well which are a good basis evaluating tessellation quality.  
 
 ## Author
 

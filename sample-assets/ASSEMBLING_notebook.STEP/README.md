@@ -10,7 +10,9 @@ https://grabcad.com/library/laptop-s1-1
 
 ## Screenshots
 
-![screenshot](<screenshot/ASSEMBLING_notebook.jpg>)
+![screenshot](<screenshot/ASSEMBLING_notebook.jpg>)  
+
+![screenshot](<screenshot/ASSEMBLING_notebook_explode.jpg>)  
 
 ## Description
 
@@ -25,8 +27,7 @@ battery 180Wh (up to 12 hours of continuous operation)
 
 ## Purpose
 
-This sample CAD asset demonstrates ...
-
+This sample CAD asset is a simple example for a small sized hard-surface objects with some basic fillets and interior parts.  
 
 ## Author
 

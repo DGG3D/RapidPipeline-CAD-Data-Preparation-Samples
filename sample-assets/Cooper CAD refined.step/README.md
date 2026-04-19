@@ -10,7 +10,9 @@ https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1
 
 ## Screenshots
 
-![screenshot](screenshot/cooper-quadruped-robot-robot-dog-1.jpg)
+![screenshot](screenshot/cooper-quadruped-robot-robot-dog-1.jpg)  
+
+![screenshot](screenshot/cooper-quadruped-robot-robot-dog-1_explode.jpg)  
 
 ## Description
 
@@ -22,7 +24,7 @@ Overall, the final robot is a stiff, reliable and high-performance quadruped des
 
 ## Purpose
 
-This sample CAD asset demonstrates ...
+This asset is a good example for a medium complex CAD assembly with a number of intricate and interior parts (screws, bolts, PCBs etc.) as well as some more complex scene hierarchy and dependencies.  
 
 
 ## Author

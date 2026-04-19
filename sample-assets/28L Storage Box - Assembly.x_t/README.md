@@ -27,7 +27,13 @@ Sterilite's Ultra™ Latch Storage Box line is ideal for those customers who wan
 
 ## Purpose
 
-This sample CAD asset demonstrates ...
+This sample CAD asset demonstrates multiple challenges for the dataprep and 3D processing steps:  
+
+1. Parts of this asset (lid) provide an exceptional challenge for the initial mesh normal calculation during the tessellation process. This is usually due to inaccuracies during the conversion process and the origin of those are usually complex fillets or sharp edges within the original parametric surfaces or solid.  
+
+2. Complex Corner fillets. These particular shapes within the parametric CAD surface data is very challenging for the tessellation process and can lead to inaccuracies such as overlapping triangles and other topological issues within the geometry.  
+
+3. Double-sided surfaces. The storage box walls are double sided and provide a challenge for tessellation, especially lower resolutions where resulting tessellated surfaces might be overlapping.  
 
 
 ## Author
