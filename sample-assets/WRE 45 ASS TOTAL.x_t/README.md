@@ -30,7 +30,7 @@ This complex sample CAD asset with fillets and interior parts demonstrates quite
 
 2. Winding Order Issues. These usually stem from translation issues from parametric CAD to mesh surface, but can also have their origin within the CAD data set for example due to intersecting surfaces or open edges.  
 
-![screenshot](<screenshot/WRE 45 ASS TOTAL.x_t_windingOrder.jpg>)  
+<img src="./screenshot/WRE 45 ASS TOTAL.x_t_windingOrder.jpg" width="400">  
 
 ### Duplicated Parts
 

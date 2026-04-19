@@ -40,7 +40,7 @@ This sample CAD asset demonstrates quite a few challenges for a propper conversi
 
 2. Winding Order Issues. These usually stem from translation issues from parametric CAD to mesh surface, but can also have their origin within the CAD data set for example due to intersecting surfaces or open edges.  
 
-![screenshot](<screenshot/Robotrv_windingOrder.jpg>)  
+<img src="./screenshot/Robotrv_windingOrder.jpg" width="400">  
 
 
 ## Author
