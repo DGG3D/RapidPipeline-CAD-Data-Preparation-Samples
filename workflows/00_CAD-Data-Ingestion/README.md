@@ -19,7 +19,7 @@ Please see more information regarding the individual settings in the respective 
 
 ## Sample Results
 
-The exemplatory sample results can be found within the [sub-directory here](./sample-results)
+The sample results can be found within the [sub-directory here](./sample-results)
 
 <img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">  
 Tessellated mesh with quad dominant topology
@@ -55,7 +55,7 @@ Alternatively the export command `-e` can be used to generate any output path or
 ## Settings File
 
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
-It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
+It is following `.json` syntax and is validated against the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
 In this example we are only making use of the `Import` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
@@ -84,7 +84,7 @@ Attempts to remove T-Junctions after CAD tessellation.
 
 - Maximum Angle = Decreasing the max angle generates more faces in high curvature areas, such as fillets for example  
 
-- Maximum Edge Length = Controls the maximum length of edges per face. Caution, as the value is absolute (mm), large parts might become overtessellated, including flat surfaces  
+- Maximum Edge Length = Controls the maximum length of edges per face. Caution, as the value is absolute (mm), large parts might become over-tessellated, including flat surfaces  
 
 
 #### [Rotate Z-Up to Y-Up](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-import-settings#convert-z-up-to-y-up)

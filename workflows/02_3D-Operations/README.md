@@ -17,7 +17,7 @@ This section is about further 3D processing operations as optional processes whi
 
 ## Sample Results
 
-The exemplatory sample results can be found within the [sub-directory here](./sample-results)
+The sample results can be found within the [sub-directory here](./sample-results)
 
 ASSEMBLING_notebook.STEP culled interior and small geometry:  
 <img src="sample-results/screenshot/ASSEMBLING_notebook_mesh-culling.jpg" width="400">  
@@ -71,12 +71,12 @@ The 3D Processor CLI will automatically create a default output folder if the ru
 
 Alternatively the export command `-e` can be used to generate any output path or file format.  Read more about the [export command here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#export-via-command).  
 
-Multiple settings files can be combined as seen in the second command line example above. At least one of the configuration files needs to delare an output format within the `export` section (unless the `-e` command is utilized).  
+Multiple settings files can be combined as seen in the second command line example above. At least one of the configuration files needs to declare an output format within the `export` section (unless the `-e` command is utilized).  
 
 ## Settings File
 
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
-It is following `.json` syntax and is validated agains the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
+It is following `.json` syntax and is validated against the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
 In this example we are only making use of the `Import`, `Mesh Culling`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
