@@ -5,7 +5,7 @@ A collection of CAD Data Preparation &amp; 3D Processing Workflows on publicly a
 
 ## Purpose
 
-The purpose of this repository is to deliver example workflows and assets illustrating what is needed for an optimal conversion from parametric CAD data to tessellated mesh data suitable for CGI and real-time visualization use-cases. In a future update examples for (physics) simulation and other additional use-cases will be added.  
+The purpose of this repository is to deliver example workflows and assets illustrating what is needed for an optimal conversion from parametric CAD data to tessellated mesh data suitable for CGI and real-time visualization use-cases. In a future update examples validated for (physics) simulation and other additional use-cases will be added.  
 
 The RapidPipeline 3D Processor Software is utilized as an exemplary pipeline tool to automate most of the Data Preparation and 3D Processing tasks and show-case the results of the processing.
 
