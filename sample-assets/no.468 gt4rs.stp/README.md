@@ -17,10 +17,7 @@ https://grabcad.com/library/porsche-718-cayman-gt4-rs-1
 ## Description
 
 Work in Alias2021,rendered in Corona8.
-exterior mirror, windshield wiper, brakes,front logo and interior are made by kunos(Assetto Corsa),so this model can't be used commercially！
-Leave a comment if you like it!
---------------------------------------------------------
-remake the headlight part, still not 100% correct, but looks more reasonable.
+exterior mirror, windshield wiper, brakes,front logo and interior are made by kunos(Assetto Corsa).  
 
 ## Purpose
 
