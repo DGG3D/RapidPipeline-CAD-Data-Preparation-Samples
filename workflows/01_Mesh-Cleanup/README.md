@@ -22,7 +22,7 @@ Robot rv.IGS corrected winding order (wrong winding order indicated in red):
 |---------|-------------|
 | [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>), [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400"> |  
 <br>
-no.468 gt4rs.stp Merged vertices - shown on rear window for better illustration (unconnected parts are illustrated in random wireframe color values):  
+no.468 gt4rs.stp Merged vertices - shown on rear window for better illustration (unconnected parts are illustrated in random wireframe colors):  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
