@@ -31,11 +31,12 @@ The sample results can be found within the [sub-directory here](./sample-results
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 <img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400">  
 <br>
-Robot rv.IGS corrected winding order:  
+Robot rv.IGS corrected winding order (wrong winding order indicated in red):  
 <img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400">  
 <br>
-no.468 gt4rs.stp Merged vertices & corrected winding order:  
+no.468 gt4rs.stp Merged vertices on rear window (unconnected parts are illustrated in random wireframe color values):  
 <img src="sample-results/screenshot/no.468 gt4rs.stp_merged-verts_wire.jpg" width="400">  
+no.468 gt4rs.stp corrected winding order:  
 <img src="sample-results/screenshot/no.468 gt4rs.stp_windingOrderCorrection.jpg" width="400">  
 Note: Sewing was performed before tessellation (see [previous workflow section](../00_CAD-Data-Ingestion/README.md#sewing-tolerance) for details regarding CAD import).  
 <br>

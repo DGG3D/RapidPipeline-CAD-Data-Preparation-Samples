@@ -30,7 +30,7 @@ Tessellated mesh with quad dominant topology:
 Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right); Different parts/patches are illustrated in random color values:  
 <img src="sample-results/screenshot/Robot rv.IGS_sewing.jpg" width="400">  
 
-Note: The Robot rv.IGS asset also has some improper winding order after the tessellation process. Please see the [next workflow](../01_Mesh-Cleanup/README.MD) to learn more about Winding Order and how to correct it if needed.  
+Note: The Robot rv.IGS asset also has some improper winding order after the tessellation process. Please see the [next workflow](../01_Mesh-Cleanup/README.md#fix-winding-order) to learn more about Winding Order and how to correct it if needed.  
 
 ## Steps to Reproduce
 
