@@ -22,13 +22,13 @@ Please see more information regarding the individual settings in the respective 
 
 ## Sample Results
 
-The sample results can be found within the [sub-directory here](./sample-results)
+The sample results can be found within the [sub-directory here](./sample-results)  
 
+Tessellated mesh with quad dominant topology:  
 <img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">  
-Tessellated mesh with quad dominant topology.  
 
+Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right); Different parts/patches are illustrated in random color values:  
 <img src="sample-results/screenshot/Robot rv.IGS_sewing.jpg" width="400">  
-Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right). Different parts/patches are illustrated in random color values.  
 
 Note: The Robot rv.IGS asset also has some improper winding order after the tessellation process. Please see the [next workflow](../01_Mesh-Cleanup/README.MD) to learn more about Winding Order and how to correct it if needed.  
 
