@@ -10,25 +10,17 @@ RapidPipeline offers lots of settings to fine-tune the CAD Ingestion process, wh
 
 Please see more information regarding the individual settings in the respective sections further below.  
 
-### Example Files
+### Example Files & Results
 
-[EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
+| Input CAD Asset | Processed Output | Description |
+|---------|-------------|
+| [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)  
-[<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
-
-[Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
+[<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>) | <img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400"> | Tessellated mesh with quad dominant topology. |
+| [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
 [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
-[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>)  
+[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_sewing.jpg" width="400"> | Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right); Different parts/patches are illustrated in random color values. |
 
-## Sample Results
-
-The sample results can be found within the [sub-directory here](./sample-results)  
-
-Tessellated mesh with quad dominant topology:  
-<img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">  
-
-Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right); Different parts/patches are illustrated in random color values:  
-<img src="sample-results/screenshot/Robot rv.IGS_sewing.jpg" width="400">  
 
 Note: The Robot rv.IGS asset also has some improper winding order after the tessellation process. Please see the [next workflow](../01_Mesh-Cleanup/README.md#fix-winding-order) to learn more about Winding Order and how to correct it if needed.  
 
