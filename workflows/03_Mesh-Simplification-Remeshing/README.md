@@ -313,7 +313,87 @@ This number acts as an overall limit, preserving a minimum number of scene graph
 
 #### Remeshing
 
-[remeshing.json](remeshing.json)
+[remeshing_res-7.json](remeshing_res-7.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 30.0,
+      "computationMethod": "area"
+    }
+  },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 0
+  },
+  "optimize": {
+    "3dModelOptimizationMethod": {
+      "meshAndMaterialOptimization": {
+        "remesher": {
+          "target": {
+            "faces": {
+              "value": 500000
+            }
+          },
+          "materialMerger": {
+            "materialRegenerator": {
+              "uvAtlasGenerator": {
+                "textureBaker": {
+                  "normalMap": {
+                    "mode": "never",
+                    "recomputeNormals": false
+                  },
+                  "bakingResolution": {
+                    "default": 0
+                  }
+                }
+              }
+            }
+          },
+          "method": "shrinkwrap",
+          "resolution": 7,
+          "filterBackProjected": true
+        }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": true
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : true
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+[remeshing_res-8.json](remeshing_res-8.json)
 
 ```
 {
