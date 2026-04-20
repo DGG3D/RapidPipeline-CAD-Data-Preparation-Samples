@@ -13,7 +13,7 @@ Please see more information regarding the individual settings in the respective 
 ### Example Files & Results
 
 | Input CAD Asset | Processed Output | Description |
-|---------|-------------|
+|---------|-------------|-------------|
 | [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)  
 [<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>) | <img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400"> | Tessellated mesh with quad dominant topology. |
