@@ -14,6 +14,9 @@ This section is about further 3D processing operations as optional processes whi
 [Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)  
 [<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
 
+[Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
+[Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
+[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>)  
 
 ## Sample Results
 
@@ -24,7 +27,13 @@ ASSEMBLING_notebook.STEP culled interior and small geometry:
 <br>
 Cordless Drill DeWalt DCD791_variation01-standard.3dm culled interior and small geometry:  
 <img src="sample-results/screenshot/Cordless Drill DeWalt DCD791_variation01-standard_mesh-culling.jpg" width="400">  
-
+<br>
+Cooper CAD refined.step not flattened:  
+<img src="sample-results/screenshot/Cooper CAD refined_no-flattening.jpg" width="400">  
+Cooper CAD refined.step flattened by Material:  
+<img src="sample-results/screenshot/Cooper CAD refined_flattening.jpg" width="400">  
+Cooper CAD refined.step flattened by Material with Scene Graph Preservation Level 1:  
+<img src="sample-results/screenshot/Cooper CAD refined_flattening-depthLevelPres.jpg" width="400">  
 
 ## Steps to Reproduce
 
@@ -55,14 +64,16 @@ rpdx --read_config mesh-culling.json --read_c rotateZUp.json -i 'Cordless Drill 
 
 ### Scene Graph Flattening
 
-#### Simple flattening by Material
+#### Flattening by Material
 
 ```
-rpdx --read_config flattening.json -i 'ASSEMBLING_notebook.STEP' -r -o output_flattening
+rpdx --read_config flattening.json -i 'Cooper CAD refined.step' -r -o output_flattening
 ```
 
+#### Flattening by Material with Scene Depth Level Preservation
+
 ```
-rpdx --read_config flattening.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_flattening
+rpdx --read_config flattening-depthLevelPres.json -i 'Cooper CAD refined.step' -r -o output_flattening-depthLevelPres
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  

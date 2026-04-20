@@ -13,12 +13,6 @@
       }
     },
   "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": false
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    },
     "repair": {
       "vertexMerging":{
         "mergeDistance": {

@@ -7,55 +7,50 @@
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
     "meshNormals": {
       "recomputeInputNormals": true,
-      "hardAngleThreshold": 60.0,
+      "hardAngleThreshold": 30.0,
       "computationMethod": "area"
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    },
-    "repair": {
-      "windingOrder": {
-        "visibilityMode": "default",
-        "ignoreTransparency" : false,
-        "perLump": true
+    }
+  },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 0
+  },
+  "optimize": {
+    "3dModelOptimizationMethod": {
+      "meshAndMaterialOptimization": {
+        "remesher": {
+          "target": {
+            "faces": {
+              "value": 1500000
+            }
+          },
+          "materialMerger": {
+            "materialRegenerator": {
+              "uvAtlasGenerator": {
+                "textureBaker": {
+                  "normalMap": {
+                    "mode": "never",
+                    "recomputeNormals": false
+                  },
+                  "bakingResolution": {
+                    "default": 0
+                  }
+                }
+              }
+            }
+          },
+          "method": "shrinkwrap",
+          "resolution": 9,
+          "filterBackProjected": true
+        }
       }
     }
   },
-    "optimize": {
-        "3dModelOptimizationMethod": {
-            "meshAndMaterialOptimization": {
-                "remesher": {
-                      "materialMerger": {
-                        "materialRegenerator": {
-                          "uvAtlasGenerator": {
-                            "textureBaker": {
-                              "bakingResolution": {
-                                "default": 0
-                              }
-                            }
-                         }
-                       }
-                     },
-                    "target": {
-                        "faces": {
-                            "value": 1000000
-                        }
-                    },
-                    "method": "shrinkwrap",
-                    "resolution": 9,
-                    "filterBackProjected": true
-                }
-            }
-        }
-    },
     "export": [
         {
             "discard": {

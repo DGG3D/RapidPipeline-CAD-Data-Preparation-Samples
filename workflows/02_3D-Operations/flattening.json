@@ -1,10 +1,10 @@
 {
     "import": {
       "CAD": {
-        "tessellationResolution":"extraFine", 
+        "tessellationResolution":"custom", 
         "sewTolerance": 0.05, 
         "removeTJunctions": true,
-        "maxSurfaceDeviation": 0.05,
+        "maxSurfaceDeviation": 0.4,
         "maxAngle": 40,
         "maxEdgeLength": 0
       },

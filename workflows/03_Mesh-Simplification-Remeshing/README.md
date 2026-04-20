@@ -15,6 +15,8 @@ Simplifying geometry to improve performance or recreating surfaces for better ed
 [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
 [<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
 
+
+
 ## Sample Results
 
 The sample results can be found within the [sub-directory here](./sample-results)  
@@ -26,7 +28,7 @@ Cooper CAD refined.step decimated to 500,000 faces:
 no.468 gt4rs.stp decimated to 500,000 faces:  
 <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400">  
 <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400">  
-
+<br>
 
 ## Steps to Reproduce
 
@@ -79,13 +81,13 @@ It is following `.json` syntax and is validated against the [RapidPipeline 3D Pr
 In this example we are only making use of the `Import`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-<!-- 
+
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
 
-
+<!-- 
 ### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
 
 Various methods of culling geometry from an input model.  
@@ -165,19 +167,8 @@ This number acts as an overall limit, preserving a minimum number of scene graph
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
-  "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": false
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    }
-  },
     "optimize": {
         "3dModelOptimizationMethod": {
             "meshAndMaterialOptimization": {
@@ -245,12 +236,6 @@ This number acts as an overall limit, preserving a minimum number of scene graph
       }
     },
   "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": false
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    },
     "repair": {
       "vertexMerging":{
         "mergeDistance": {
@@ -318,6 +303,78 @@ This number acts as an overall limit, preserving a minimum number of scene graph
 
 ```
 {
-
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 30.0,
+      "computationMethod": "area"
+    }
+  },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 0
+  },
+  "optimize": {
+    "3dModelOptimizationMethod": {
+      "meshAndMaterialOptimization": {
+        "remesher": {
+          "target": {
+            "faces": {
+              "value": 500000
+            }
+          },
+          "materialMerger": {
+            "materialRegenerator": {
+              "uvAtlasGenerator": {
+                "textureBaker": {
+                  "normalMap": {
+                    "mode": "never",
+                    "recomputeNormals": false
+                  },
+                  "bakingResolution": {
+                    "default": 0
+                  }
+                }
+              }
+            }
+          },
+          "method": "shrinkwrap",
+          "resolution": 8,
+          "filterBackProjected": true
+        }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": true
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : true
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
 }
 ```
