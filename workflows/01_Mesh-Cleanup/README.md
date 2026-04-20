@@ -10,6 +10,10 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 <br>
 
+The sample results can be found within the [sub-directory here](./sample-results)  
+
+<br>
+
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 
 | Input CAD Asset | Processed Output |
@@ -51,7 +55,6 @@ WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the par
 | [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400"> |  
 <br>
 
-The sample results can be found within the [sub-directory here](./sample-results)  
 
 ## Steps to Reproduce
 
