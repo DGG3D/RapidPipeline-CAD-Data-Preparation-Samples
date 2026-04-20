@@ -362,9 +362,6 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
       "hardAngleThreshold": 60.0,
       "computationMethod": "area"
     },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": false
-    },
     "repair" : {
       "vertexMerging":{
         "mergeDistance": {
