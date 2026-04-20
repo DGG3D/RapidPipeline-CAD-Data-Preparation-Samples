@@ -76,19 +76,19 @@ Further information regarding [Mesh Cleanup (3D Edit) Settings](https://docs.rap
 ### Normal Recalculation
 
 ```
-rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly (Sterilite UltraLatch 1985LAB86).x_t' -r
+rpdx --read_config cleanup-normals.json -i '28L Storage Box - Assembly (Sterilite UltraLatch 1985LAB86).x_t' -r -o output
 ```
 
 ### Vertex Merging
 
 ```
-rpdx --read_config vertex-merging.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r
+rpdx --read_config vertex-merging.json --read_config rotateZUp.json -i 'no.468 gt4rs.stp' -r -o output
 ```
 
 ### Winding Order Correction
 
 ```
-rpdx --read_config cleanup-windingOrder.json -i 'Robot rv.IGS' -r
+rpdx --read_config cleanup-windingOrder.json -i 'Robot rv.IGS' -r -o output
 ```
 
 #### Utilizing Vertex Merging and Winding Order Correction

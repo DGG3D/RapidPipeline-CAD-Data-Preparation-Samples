@@ -4,36 +4,46 @@
 
 This section is about further 3D processing operations as optional processes which can help with complex data sets by removing invisible or small geometry as well as flattening nodes, meshes or materials.  
 
-### Example Files
+### Example Files & Results  
 
-[ASSEMBLING_notebook.STEP](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)  
-[Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)  
-[<img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="400">](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)  
+<br>
 
-[Cordless Drill DeWalt DCD791_variation01-standard.3dm](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
-[Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)  
-[<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>)  
+The sample results can be found within the [sub-directory here](./sample-results)  
 
-[Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
-[Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
-[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>)  
-
-## Sample Results
-
-The sample results can be found within the [sub-directory here](./sample-results)
+<br>
 
 ASSEMBLING_notebook.STEP culled interior and small geometry:  
-<img src="sample-results/screenshot/ASSEMBLING_notebook_mesh-culling.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [ASSEMBLING_notebook.STEP](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>), [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)[<img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="400">](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>) | <img src="sample-results/screenshot/ASSEMBLING_notebook_mesh-culling.jpg" width="400"> |  
 <br>
+
 Cordless Drill DeWalt DCD791_variation01-standard.3dm culled interior and small geometry:  
-<img src="sample-results/screenshot/Cordless Drill DeWalt DCD791_variation01-standard_mesh-culling.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cordless Drill DeWalt DCD791_variation01-standard.3dm](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>), [Download](<Cordless Drill DeWalt DCD791_variation01-standard.3dm/asset/Cordless Drill DeWalt DCD791_variation01-standard.3dm>)[<img src="../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/screenshot/Cordless Drill DeWalt DCD791_variation01-standard.jpg" width="400">](<../../sample-assets/Cordless Drill DeWalt DCD791_variation01-standard.3dm/README.md>) | <img src="sample-results/screenshot/Cordless Drill DeWalt DCD791_variation01-standard_mesh-culling.jpg" width="400"> |  
 <br>
+
 Cooper CAD refined.step not flattened:  
-<img src="sample-results/screenshot/Cooper CAD refined_no-flattening.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_no-flattening.jpg" width="400"> |  
+
 Cooper CAD refined.step flattened by Material:  
-<img src="sample-results/screenshot/Cooper CAD refined_flattening.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_flattening.jpg" width="400"> |  
+
 Cooper CAD refined.step flattened by Material with Scene Graph Preservation Level 1:  
-<img src="sample-results/screenshot/Cooper CAD refined_flattening-depthLevelPres.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_flattening-depthLevelPres.jpg" width="400"> |  
+
 
 ## Steps to Reproduce
 
