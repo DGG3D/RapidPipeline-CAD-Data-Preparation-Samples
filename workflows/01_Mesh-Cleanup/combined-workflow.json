@@ -14,7 +14,7 @@
       "recomputeInputNormals": true,
       "hardAngleThreshold": 60.0,
       "computationMethod": "area"
-    }
+    },
     "repair" : {
       "vertexMerging":{
         "mergeDistance": {
