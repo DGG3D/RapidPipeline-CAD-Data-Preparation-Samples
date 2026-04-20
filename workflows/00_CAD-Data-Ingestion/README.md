@@ -12,6 +12,8 @@ Please see more information regarding the individual settings in the respective 
 
 ### Example Files & Results
 
+<br>
+
 Tessellated mesh with quad dominant topology:  
 
 | Input CAD Asset | Processed Output |
