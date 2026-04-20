@@ -10,22 +10,26 @@ Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described
 
 <br>
 
-28L Storage Box - Assembly.x_t recalculated mesh normals:
+28L Storage Box - Assembly.x_t recalculated mesh normals:  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [28L Storage Box - Assembly.x_t](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>), [Download Link](https://grabcad.com/library/28l-30-qt-storage-box-sterilite-ultra-latch-1985lab86-1)[<img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="400">](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>) | <img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400"> |  
 <br>
-Robot rv.IGS corrected winding order (wrong winding order indicated in red):
+Robot rv.IGS corrected winding order (wrong winding order indicated in red):  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>), [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400"> |  
 <br>
-no.468 gt4rs.stp Merged vertices on rear window (unconnected parts are illustrated in random wireframe color values):
+no.468 gt4rs.stp Merged vertices on rear window (unconnected parts are illustrated in random wireframe color values):  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_merged-verts_wire.jpg" width="400"> |  
 
-no.468 gt4rs.stp corrected winding order:
+no.468 gt4rs.stp corrected winding order:  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_windingOrderCorrection.jpg" width="400"> |  
@@ -34,12 +38,14 @@ no.468 gt4rs.stp corrected winding order:
 Note: Sewing was performed before tessellation (see [previous workflow section](../00_CAD-Data-Ingestion/README.md#sewing-tolerance) for details regarding CAD import).  
 <br>
 
-WRE 45 ASS TOTAL.x_t Recalculated mesh normals & corrected winding order:
+WRE 45 ASS TOTAL.x_t Recalculated mesh normals & corrected winding order:  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400"> |  
 
-WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](<../../sample-assets/WRE%2045%20ASS%20TOTAL.x_t/README.md#purpose>)):
+WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](<../../sample-assets/WRE%2045%20ASS%20TOTAL.x_t/README.md#purpose>)):  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400"> |  
