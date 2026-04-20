@@ -7,17 +7,11 @@
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
     "meshNormals": {
       "recomputeInputNormals": false
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
     },
     "repair": {
       "windingOrder": {

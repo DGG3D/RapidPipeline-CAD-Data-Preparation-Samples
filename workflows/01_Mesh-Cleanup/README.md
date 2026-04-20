@@ -188,9 +188,6 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
@@ -198,9 +195,6 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
       "recomputeInputNormals": true,
       "hardAngleThreshold": 60.0,
       "computationMethod": "area"
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
     }
   },
     "export": [
@@ -241,15 +235,9 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    },
     "repair" : {
       "vertexMerging":{
         "mergeDistance": {
@@ -283,6 +271,20 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 }
 ```
 
+#### Rotate Z-Up to Y-Up 
+
+[rotateZUp.json](rotateZUp.json)
+
+```
+{
+  "import": {
+    "general": {
+      "rotateZUp": true
+    }
+   }
+}
+```
+
 #### Winding Order Correction
 
 [cleanup-windingOrder.json](cleanup-windingOrder.json)
@@ -297,15 +299,9 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": false
-    },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
     },

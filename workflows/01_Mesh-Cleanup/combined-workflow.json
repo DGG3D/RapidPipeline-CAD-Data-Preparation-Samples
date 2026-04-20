@@ -7,9 +7,6 @@
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
@@ -17,10 +14,7 @@
       "recomputeInputNormals": true,
       "hardAngleThreshold": 60.0,
       "computationMethod": "area"
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": false
-    },
+    }
     "repair" : {
       "vertexMerging":{
         "mergeDistance": {
