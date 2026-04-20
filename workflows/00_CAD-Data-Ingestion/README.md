@@ -17,8 +17,7 @@ Tessellated mesh with quad dominant topology:
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [EG 43-17 HG Pojemnik.STEP](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>), [Download Link](https://grabcad.com/library/eg43-17-hg-1)[<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>) | [<img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">](<./sample-results/output/0_usd/EG 43-17 HG Pojemnik.usd>) |  
-
-
+<br>
 Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right); Different parts/patches are illustrated in random color values:  
 
 | Input CAD Asset | Processed Output |
