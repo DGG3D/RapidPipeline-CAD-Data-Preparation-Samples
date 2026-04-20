@@ -16,13 +16,21 @@ Please see more information regarding the individual settings in the respective 
 [Download Link](https://grabcad.com/library/eg43-17-hg-1)  
 [<img src="../../sample-assets/EG 43-17 HG Pojemnik.STEP/screenshot/EG 43-17 HG Pojemnik.jpg" width="400">](<../../sample-assets/EG 43-17 HG Pojemnik.STEP/README.md>)  
 
+[Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)  
+[Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)  
+[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>)  
 
 ## Sample Results
 
 The sample results can be found within the [sub-directory here](./sample-results)
 
 <img src="sample-results/screenshot/EG 43-17 HG Pojemnik-result.jpg" width="400">  
-Tessellated mesh with quad dominant topology
+Tessellated mesh with quad dominant topology.  
+
+<img src="sample-results/screenshot/Robot rv.IGS_sewing.jpg" width="400">  
+Tessellated 'Robot rv.IGS' asset "raw" import (left) vs with sewing pre-process on the boundary representations (right). Different parts/patches are illustrated in random color values.  
+
+Note: The Robot rv.IGS asset also has some improper winding order after the tessellation process. Please see the [next workflow](../01_Mesh-Cleanup/README.MD) to learn more about Winding Order and how to correct it if needed.  
 
 ## Steps to Reproduce
 
@@ -43,6 +51,10 @@ Further information regarding [CAD import settings](https://docs.rapidpipeline.c
 
 ```
 rpdx --read_config CAD-ingestion.json -i 'EG 43-17 HG Pojemnik.STEP' -r
+```
+
+```
+rpdx --read_config CAD-ingestion.json -i 'Robot rv.IGS' -r
 ```
 
 

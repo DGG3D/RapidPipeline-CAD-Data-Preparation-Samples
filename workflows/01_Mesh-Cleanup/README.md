@@ -31,9 +31,16 @@ The sample results can be found within the [sub-directory here](./sample-results
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 <img src="sample-results/screenshot/28L Storage Box - Assembly_normal-recalculation.jpg" width="400">  
 <br>
-WRE 45 ASS TOTAL.x_t Merged Vertices & recalculated mesh normals:  
+Robot rv.IGS corrected winding order:  
+<img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400">  
+<br>
+no.468 gt4rs.stp Merged vertices & corrected winding order:  
+<img src="sample-results/screenshot/no.468 gt4rs.stp_merged-verts_wire.jpg" width="400">  
+<img src="sample-results/screenshot/no.468 gt4rs.stp_windingOrderCorrection.jpg" width="400">  
+Note: Sewing was performed before tessellation (see [previous workflow section](../00_CAD-Data-Ingestion/README.md#sewing-tolerance) for details regarding CAD import).  
+<br>
+WRE 45 ASS TOTAL.x_t Recalculated mesh normals & corrected winding order:  
 <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400">  
-<img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation-wire.jpg" width="400">  
 WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](<../../sample-assets/WRE%2045%20ASS%20TOTAL.x_t/README.md#purpose>)):  
 <img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400">  
 
@@ -125,7 +132,7 @@ The method affects how the angles of the normals for soft edges are handled.
 
 ### [Vertex Merging](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
-Note: Removal of duplicated vertices is performed if the vertex merging distance is set to `0`.  
+Note: If the vertex merging distance is `0`, only duplicated vertices removal will be performed.  
 
 #### [Vertex Merging Per Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#vertex-merging)
 
