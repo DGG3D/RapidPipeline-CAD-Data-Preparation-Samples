@@ -13,8 +13,12 @@
 ## Sample Results
 
 Game-controller-ASM.STEP remeshed to 50,000 faces:  
-<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshed-50k-shaded.jpg" width="400">  
-<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshed-50k-wire.jpg" width="400">  
+<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_wire.jpg" width="400">  
+Remeshed result shaded - without normal map:  
+<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_noNormalMap.jpg" width="400">  
+Remeshed result shaded - with normal map:  
+<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_shaded.jpg" width="400">  
+
 
 ## Steps to Reproduce
 
