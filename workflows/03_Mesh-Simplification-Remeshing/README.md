@@ -27,11 +27,11 @@ no.468 gt4rs.stp decimated to 500,000 faces:
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400"><img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400"> |  
 <br>
 
-XXX remeshed (quad-dominant) to 50,000 faces:  
+Cell Phone Cover.STEP remeshed (quad-dominant) to 13,000 (= res 7) and 50,000 (= res8) triangles respectively:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-|   |  |  
+| [Cell Phone Cover.STEP](<../../sample-assets/Cell Phone Cover.STEP/README.md>), [Download Link](https://grabcad.com/library/cell-phone-case-4)[<img src="../../sample-assets/Cell Phone Cover.STEP/screenshot/Cell Phone Cover.STEP.jpg" width="400">](<../../sample-assets/Cell Phone Cover.STEP/README.md>) | <img src="sample-results/screenshot/Cell Phone Cover.STEP_remeshing.jpg" width="400"> |  
 
 Note: Even though basic model representation can be achieved, [RapidPipeline's remesher](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-optimize-settings#remesher) was designed as a pre-processing step for further optimization operations (Decimation, UV unwraping, Texture Baking etc.) - for an actual "end-to-end" optimization workflow utilizing the remesher please refer to the [05_Optimization workflow section](../05_Optimization/README.md).  
 
@@ -71,8 +71,14 @@ rpdx --read_config decimation_combined-workflow.json -i 'no.468 gt4rs.stp' -r
 
 ### Remeshing
 
+Remeshing (quad dominant) in two different resolutions (octree level 7 = ~13k triangles with given sample asset, 8 = ~50k triangles with given sample asset) without any texture baking or material preservation as a simple capability demo:  
+
 ```
-rpdx --read_config remeshing.json -i '' -r
+rpdx --read_config remeshing_res-7.json -i 'Cell Phone Cover.STEP' -r -o output_remeshing/res-7
+```
+
+```
+rpdx --read_config remeshing_res-8.json -i 'Cell Phone Cover.STEP' -r -o output_remeshing/res-8
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
@@ -86,7 +92,7 @@ Alternatively the export command `-e` can be used to generate any output path or
 The settings file is the basis for all processing with the RapidPipeline 3D Processor CLI.  
 It is following `.json` syntax and is validated against the [RapidPipeline 3D Processing Schema](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7).  
 
-In this example we are only making use of the `Import`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
+In this example we are only making use of the `Import`, `3D Edit`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
 
