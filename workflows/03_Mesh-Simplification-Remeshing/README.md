@@ -5,30 +5,38 @@
 This section is about Mesh Simplification automation such as Decimation or Remeshing operations.  
 Simplifying geometry to improve performance or recreating surfaces for better editing.  
 
-### Example Files
+### Example Files & Results  
 
-[Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>)  
-[Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)  
-[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>)  
-
-[no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
-[Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)  
-[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>)  
-
-
-
-## Sample Results
+<br>
 
 The sample results can be found within the [sub-directory here](./sample-results)  
 
+<br>
+
 Cooper CAD refined.step decimated to 500,000 faces:  
-<img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-shaded.jpg" width="400">  
-<img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-wire.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-shaded.jpg" width="400"><img src="sample-results/screenshot/Cooper CAD refined_decimated-500k-wire.jpg" width="400"> |  
 <br>
+
 no.468 gt4rs.stp decimated to 500,000 faces:  
-<img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400">  
-<img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-shaded.jpg" width="400"><img src="sample-results/screenshot/no.468 gt4rs.stp_decimated-500k-wire.jpg" width="400"> |  
 <br>
+
+XXX remeshed (quad-dominant) to 50,000 faces:  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+|   |  |  
+
+Note: Even though basic model representation can be achieved, [RapidPipeline's remesher](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-optimize-settings#remesher) was designed as a pre-processing step for further optimization operations (Decimation, UV unwraping, Texture Baking etc.) - for an actual "end-to-end" optimization workflow utilizing the remesher please refer to the [05_Optimization workflow section](../05_Optimization/README.md).  
+
+<br>
+
 
 ## Steps to Reproduce
 
