@@ -146,6 +146,8 @@ Please see below some basic explanation for each feature and setting. Each heade
 
 Option to either Generate Tiling UVs or UV atlases.  
 
+Note: UV Generation can be utilized from within the [`3DEdit`](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#material-replacer-option-1b-default-material--generate-uv-atlas) or [`Optimize`](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#material-regenerator--uv-atlas-generator--texture-baker) objects. Within 3D Edit materials are getting replaced, therefore in order to preserve the existing materials and colors the `UV Atlas Generation` section within the `optimize` object is recommended for the given use-cases.  
+
 ### [Generate UV Atlas](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas)
 
 New UVs are generated in an 'atlas' layout. The process involves three main stages, each with their own controls:  
@@ -161,6 +163,19 @@ Recommended Methods:
 `Isometric` = Isometric is the default method. Well suited for organic models or automated workflows (incl. texture baking etc.).  
 
 `packedCubeUVs` = UVs are optained through cube (box) projection and then packed. Especially well suited for hard-surface models.
+
+
+#### [UV Atlas Mode](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---atlas-packing)
+
+UV Atlas Mode controls how many UV atlases are created. Works in conjunction with Mesh and Material Merging. Merging is performed first, then the atlases are generated:  
+
+- single: Create a single atlas for the whole asset.
+- separateAlpha: Create two atlases, one for parts using alpha, and the other without alpha. This reduces texture file size because non-transparent materials don't need an alpha channel.
+- separateNormals: Create two atlases, one for textured parts, the other for un-textured parts. This allows the un-textured input materials to have normal maps baked for them, without baking any other PBR textures.
+- separateAlphaNormals: This combines the features of both separateAlpha and separateNormals.
+- separateMaterials: Create one atlas for each input material.
+
+Note: When utilizing UV Atlas Generation per Material (`separateMaterials`), optionally the `Scene Graph Flattening` with [Flattening Mode `byMaterial`](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-flattening-settings#flattening-methods) object can be utilized so that both mesh nodes and material nodes are merged by Material.  
 
 
 #### [Add Checker Texture](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#add-checker-texture)
