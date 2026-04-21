@@ -5,7 +5,7 @@
 This workflow section is about Mesh Simplification automation such as Decimation or Remeshing operations.  
 Simplifying geometry to improve performance or re-creating surfaces for better editing.  
 
-### Example Files & Results  
+## Example Files & Results  
 
 <br>
 

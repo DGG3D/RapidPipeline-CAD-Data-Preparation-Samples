@@ -6,13 +6,15 @@ This workflow section is about cleaning up and repairing the tessellated 3D mode
 
 Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described in this repository can be found under the [3D Edit](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings) section.  
 
-### Example Files & Results  
+## Example Files & Results  
 
 <br>
 
 The sample results can be found within the [sub-directory here](./sample-results)  
 
 <br>
+
+### Normal Recalculation
 
 28L Storage Box - Assembly.x_t recalculated mesh normals:  
 
@@ -22,15 +24,29 @@ The sample results can be found within the [sub-directory here](./sample-results
 <br>
 Robot rv.IGS corrected winding order (wrong winding order indicated in red):  
 
+WRE 45 ASS TOTAL.x_t Recalculated mesh normals:  
+
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-| [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>), [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400"> |  
-<br>
+| [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400"> |  
+
+### Vertex Merging
+
 no.468 gt4rs.stp Merged vertices - shown on rear window for better illustration (unconnected parts are illustrated in random wireframe colors):  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_merged-verts_wire.jpg" width="400"> |  
+
+Note: Sewing was performed before tessellation (see [previous workflow section](../00_CAD-Data-Ingestion/README.md#sewing-tolerance) for details regarding CAD import).  
+<br>
+
+### Winding Order Correction
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>), [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_windingOrderCorrection.jpg" width="400"> |  
+<br>
 
 no.468 gt4rs.stp corrected winding order:  
 
@@ -39,21 +55,23 @@ no.468 gt4rs.stp corrected winding order:
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>), [Download Link](https://grabcad.com/library/porsche-718-cayman-gt4-rs-1)[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="400">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="sample-results/screenshot/no.468 gt4rs.stp_windingOrderCorrection.jpg" width="400"> |  
 
 
-Note: Sewing was performed before tessellation (see [previous workflow section](../00_CAD-Data-Ingestion/README.md#sewing-tolerance) for details regarding CAD import).  
-<br>
-
-WRE 45 ASS TOTAL.x_t Recalculated mesh normals & corrected winding order:  
-
-| Input CAD Asset | Processed Output |
-|---------|-------------|
-| [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_normal-recalculation.jpg" width="400"> |  
-
 WRE 45 ASS TOTAL.x_t Winding Order Correction Challenges (more regarding the particular [challenges for this asset here](<../../sample-assets/WRE%2045%20ASS%20TOTAL.x_t/README.md#purpose>)):  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>), [Download Link](https://grabcad.com/library/refrigerator-wre45-1)[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="400">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="sample-results/screenshot/WRE 45 ASS TOTAL_winding-order-correction.jpg" width="400"> |  
 <br>
+
+### Fill Holes - Defeature Solid Holes
+
+Cooper CAD refined.step filled solid holes with diameter of XXXmm:  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined.step.jpg" width="400"><img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm.jpg" width="400"> |  
+
+Note: There are currently two methods of hole filling within the 3D Processor: [Fill Surface Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#fill-surface-holes) and [Defeature Solid Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#defeature-solid-holes). For the given use case (CAD Data Preparation) defeaturing of solid holes is most applicable and therefore part of this sample workflow.  
+Filling of Surface holes only applies to breaks in the continuity of a mesh or surface and is therefore helpful with more raw modeling data and usually does not occure often within CAD Dataprep, given that the tessellation and other cleanup steps are working propperly.  
 
 
 ## Steps to Reproduce
@@ -103,6 +121,11 @@ rpdx --read_config vertex-merging.json --read_config cleanup-windingOrder.json -
 rpdx --read_config combined-workflow.json -i 'WRE 45 ASS TOTAL.x_t' -r -e 'output_normalRecVertMergWindOrder/WRE 45 ASS TOTAL.usd'
 ```
 
+### Fill Holes - Defeature Solid Holes
+
+```
+rpdx --read_config fill-holes.json -i 'Cooper CAD refined.step' -r -o output_fill-holes
+```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
 
@@ -183,9 +206,23 @@ Decides whether visibility includes non-opaque meshes.
 Decides whether winding order of whole (mesh) lumps of geometry are flipped as one or per triangle.  
 
 
-### Download or copy the settings file
 
-#### Normal Recalculation
+### Fill Holes
+
+
+
+#### Defeature Solid Holes
+
+
+
+#### Fill Surface Holes
+
+
+
+
+## Download or copy the settings file
+
+### Normal Recalculation
 
 [cleanup-normals.json](cleanup-normals.json)
 
@@ -232,7 +269,7 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 }
 ```
 
-#### Vertex Merging
+### Vertex Merging
 
 [vertex-merging.json](vertex-merging.json)
 
@@ -282,7 +319,7 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 }
 ```
 
-#### Rotate Z-Up to Y-Up 
+### Rotate Z-Up to Y-Up 
 
 [rotateZUp.json](rotateZUp.json)
 
@@ -296,7 +333,7 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 }
 ```
 
-#### Winding Order Correction
+### Winding Order Correction
 
 [cleanup-windingOrder.json](cleanup-windingOrder.json)
 
@@ -348,7 +385,7 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 }
 ```
 
-#### Combined Workflow
+### Combined Workflow
 
 [combined-workflow.json](combined-workflow.json)
 
@@ -409,4 +446,12 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
         }
   ]
 }
+```
+
+### Fill Holes - Defeature Solid Holes
+
+[fill-holes.json](fill-holes.json)
+
+```
+{}
 ```

@@ -6,7 +6,7 @@ This workflow section is about optimization options such as full downstream opti
 
 Additional features such as mesh and texture compression are also looked at.  
 
-### Example Files & Results
+## Example Files & Results
 
 <br>
 

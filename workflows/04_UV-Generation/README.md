@@ -12,7 +12,7 @@ This workflow section is about UV Generation. There are multiple ways to generat
 	- Different Methods (cube, sphere, cylinder, etc.)  
 	- Suited for material assignment and texture authoring workflows (tiling textures, procedural materials etc.).  
 
-### Example Files & Results
+## Example Files & Results
 
 <br>
 
