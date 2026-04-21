@@ -95,26 +95,68 @@ It is following `.json` syntax and is validated against the [RapidPipeline 3D Pr
 In this example we are only making use of the `Import`, `3D Edit`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-<!-- 
+
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
 
 
-### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
 
-Various methods of culling geometry from an input model.  
+### [Mesh Decimation - Decimator Object](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#decimator)
 
-### [Occlusion Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#occlusion-culling)
+Simplifies a mesh by reducing the number of faces while preserving materials, UVs and textures. This is useful for reducing file size, and improving performance by reducing memory usage.  
 
-Removes occluded (invisible) parts from the 3D model, for the whole 3D model or individually for each mesh.  
+#### Face and Vertex Targets (https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#faces-target)
 
--->
+The target amount (value) or percentage of faces (triangles) or vertices. RapidPipeline will attempt to get as close as possible to the chosen value, though sometimes a mesh may require a slightly different final triangle count to preserve surface continuity.
 
-### Download or copy the settings file
+#### [Deviation Target](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#deviation-target)
 
-#### Decimation
+When using the decimator, it is possible to specify a maximum deviation to the original surface. The deviation (= error) is the maximum distance between the two assets (original and decimated).
+
+The deviation target is used to stop the decimation as soon as an edge collapse introduces an deviation/error larger then specified.
+
+#### [Material Optimization Options](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#material-optimization-decimator)
+
+Option within Decimator for optimizing the model's materials, including material merging, UV (atlas) generation, Texture Baking, and more.
+
+There are multiple options available to pair the decimation process with:
+
+- [Material Merger](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#material-merger-decimator)
+- [Keep Materials and UVs](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#keep-materials-and-uvs-decimator)
+- [Material and UV Aggregator](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#uv-aggregator-decimator)
+
+#### [Preservation of Mesh Normals](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-optimize-settings#preserve-mesh-normals), [Topology](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-optimize-settings#preserve-topology)
+
+Preserves vertex normals during decimation, rather than recalculating normals after merging vertices.  
+
+Preserves topological features like holes during decimation.  
+
+
+### [Remesher](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#remesher)
+
+Remeshes the original mesh and decimates to a face or vertices target value or percentage. The initial remeshing resolution can be configured with the resolution setting.  
+
+#### Remeshing Methods - [Voxelization](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#remesher---voxelization-method) vs [Shrinkwrap](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#remesher---shrinkwrap-method--filter-back-projected)
+
+The voxelization method creates a more smoothed surface reconstruction which sometimes can be better for texture (normal) map baking, especially when going towards very low resolution meshes with organic features.  
+
+The shrinkwrap method is more accurate in terms of surface reconstruction compared to the voxelization method. It is more suited for medium resolution outputs as well as for meshes with hard-surface features.  
+
+#### [Remeshing Resolution](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#remesher)
+
+Maximum octree depth (resolution) for the initial remeshing process before any face target is applied.  
+
+#### [Remeshing - Face Target](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#faces-target-1)
+
+The remeshing face targets perfroms and additional decimation operation after the initial remeshing.  
+
+
+
+## Download or copy the settings file
+
+### Decimation
 
 [decimation.json](decimation.json)
 
@@ -177,7 +219,7 @@ Removes occluded (invisible) parts from the 3D model, for the whole 3D model or 
 }
 ```
 
-#### Decimation - Combined Workflow
+### Decimation - Combined Workflow
 
 [decimation_combined-workflow.json](decimation_combined-workflow.json)
 
@@ -258,7 +300,7 @@ Removes occluded (invisible) parts from the 3D model, for the whole 3D model or 
 }
 ```
 
-#### Remeshing
+### Remeshing
 
 [remeshing_res-7.json](remeshing_res-7.json)
 
