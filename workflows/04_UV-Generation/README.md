@@ -36,6 +36,13 @@ KA ProArt- RTX-4090SO16G v16.step - single UV atlas vs UV atlas per material:
 | [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
 <br>
 
+Game-controller-ASM.STEP with 3 UDIM Tiles:  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas_UDIMs.jpg" width="400"> |  
+<br>
+
 KA ProArt- RTX-4090SO16G v16.step - Tiling UV Generation (Projection Mapping) - cubeUnwrap (Box Projection):  
 
 | Input CAD Asset | Processed Output |
@@ -84,17 +91,18 @@ rpdx --read_config uv-atlas-byMaterial.json -i 'KA ProArt- RTX-4090SO16G v16.ste
 ```
 rpdx --read_config uv-atlas-byMaterial.json -i 'Game-controller-ASM.STEP' -r -o output_atlasByMaterial
 ```
-
+<!--
 #### Multiple UV atlases (atlas factor)
 
 ```
-rpdx --read_config XXX.json -i '' -r
+rpdx --read_config uv-atlas-byMaterial_atlasFactor3.json -i 'KA ProArt- RTX-4090SO16G v16.step' -r -o output_atlasFactor
 ```
+--->
 
 #### UDIMs (UV Tiles)
 
 ```
-rpdx --read_config XXX.json -i '' -r
+rpdx --read_config uv-atlas-byMaterial_UDIMs.json -i 'Game-controller-ASM.STEP' -r -o output_UDIMs
 ```
 
 ### Tiling UVs Generation (Projection Mapping)
@@ -285,6 +293,7 @@ Note: When utilizing UV Atlas Generation per Material (`separateMaterials`), opt
 }
 ```
 
+<!--
 #### Multiple UV atlases (atlas factor)
 
 [uv-atlas-byMaterial.json](uv-atlas-byMaterial.json)
@@ -293,6 +302,7 @@ Note: When utilizing UV Atlas Generation per Material (`separateMaterials`), opt
 ```
 {}
 ```
+--->
 
 #### UDIMs (UV Tiles)
 
@@ -300,7 +310,77 @@ Note: When utilizing UV Atlas Generation per Material (`separateMaterials`), opt
 
 
 ```
-{}
+
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "sceneGraphFlattening": {
+    "method": "full",
+    "preservedSceneDepth": 0
+  },
+  "3dEdit": {
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    }
+  },
+  "optimize": {
+    "3dModelOptimizationMethod": {
+      "onlyMaterial": {
+          "materialMerger": {
+            "materialRegenerator": {
+              "uvAtlasGenerator": {
+                "textureBaker": {
+                  "bakingResolution": {
+                    "default": 0
+                  }
+                },
+                "method": "packedCubeUVs",
+                "segmentationCutAngle": 88.0,
+                "segmentationChartAngle": 130.0,
+                "maxAngleError": 114.0,
+                "maxPrimitivesPerChart": 10000,
+                "cutOverlappingPieces": true,
+                "atlasMode": "single",
+                "allowRectangularAtlases": false,
+                "packingResolution": 1024,
+                "packingPixelDistance": 2,
+                "atlasFactor": 3,
+                "atlasFactorUDIMLayout": true 
+             }
+           }
+         }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
 ```
 
 ### Tiling UV Generation (Projection Mapping)
