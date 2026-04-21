@@ -102,7 +102,7 @@ rpdx --read_config uv-atlas-byMaterial_atlasFactor3.json -i 'KA ProArt- RTX-4090
 #### UDIMs (UV Tiles)
 
 ```
-rpdx --read_config uv-atlas-byMaterial_UDIMs.json -i 'Game-controller-ASM.STEP' -r -o output_UDIMs
+rpdx --read_config uv-atlas_UDIMs.json -i 'Game-controller-ASM.STEP' -r -o output_UDIMs
 ```
 
 ### Tiling UVs Generation (Projection Mapping)
@@ -127,21 +127,53 @@ It is following `.json` syntax and is validated against the [RapidPipeline 3D Pr
 In this example we are only making use of the `Import`, `3DEdit`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-<!-- 
+
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
 
-### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
+### [Generate UVs](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#generate-uvs)
 
-Various methods of culling geometry from an input model.  
+Option to either Generate Tiling UVs or UV atlases.  
 
-### [Occlusion Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#occlusion-culling)
+### [Generate UV Atlas](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas)
 
-Removes occluded (invisible) parts from the 3D model, for the whole 3D model or individually for each mesh.  
+New UVs are generated in an 'atlas' layout. The process involves three main stages, each with their own controls:  
 
--->
+- [Segmentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---segmentation)
+- [Unwrapping](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---unwrapping)
+- [Atlas Packing](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---atlas-packing)
+
+#### [Unwrapping Methods](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---unwrapping)
+
+Recommended Methods:  
+
+`Isometric` = Isometric is the default method. Well suited for organic models or automated workflows (incl. texture baking etc.).  
+
+`packedCubeUVs` = UVs are optained through cube (box) projection and then packed. Especially well suited for hard-surface models.
+
+
+#### [Add Checker Texture](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#add-checker-texture)
+
+This will add a 1024x1024 JPG checker texture into the Base Color input of the material.  
+
+#### [UDIMs (UV Tiles)](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#generate-uv-atlas-1)
+
+Atlas Factor to UDIM Layout: Utilizes atlas factor as number of tiles in a UDIM layout instead.  
+
+Note: Currently `scene graph flattening` method `full` and `atlasingMode` `single` is required for the UDIM generation to work.  
+
+
+### Tiling UVs (Projection Mapping)
+
+Currently the only method available is `cubeUnwrap`.  
+
+#### [Cube Unwrap (Box Mapping)](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#material-edit--generate-uvs)
+
+  
+
+
 
 ## Download or copy the settings file
 
