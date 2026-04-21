@@ -213,18 +213,35 @@ Decides whether visibility includes non-opaque meshes.
 Decides whether winding order of whole (mesh) lumps of geometry are flipped as one or per triangle.  
 
 
+### [Defeature Solid Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#defeature-solid-holes)
 
-### Fill Holes
+Identifies and defeatures (fills) circular solid holes.  
 
+#### [Match Mode](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#match-mode)
 
+Match Mode to identify the solid holes. e.g. circular means only circular features are identified.  
 
-#### Defeature Solid Holes
+#### [Maximum Circular Distance](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#maximum-circular-distance)
 
+Maximum diameter to identify and defeature circular Solid Holes. Can be value or percentage.  
 
+#### [Material](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#material)
 
-#### Fill Surface Holes
+Decides what material is used for the newly created (filled) surfaces.  
 
+#### [Neighbour](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#neighbour)
 
+Newly created (filled) surfaces materials will be defined by the holes neighbouring materials.  
+
+#### [Separate Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#separate-mesh)
+
+Newly created (filled) surfaces are separate meshes.  
+
+### [Fill Surface Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#fill-surface-holes)
+
+Fills circular surface holes. A surface hole is a break in the continuity of a mesh or surface.
+
+Same Settings as seen above with `Defeaturing Solid Holes`.
 
 
 ## Download or copy the settings file
