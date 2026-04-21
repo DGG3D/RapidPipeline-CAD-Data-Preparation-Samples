@@ -95,13 +95,13 @@ It is following `.json` syntax and is validated against the [RapidPipeline 3D Pr
 In this example we are only making use of the `Import`, `3D Edit`, `Optimize`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-
+<!-- 
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
 
-<!-- 
+
 ### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
 
 Various methods of culling geometry from an input model.  
@@ -110,59 +110,6 @@ Various methods of culling geometry from an input model.
 
 Removes occluded (invisible) parts from the 3D model, for the whole 3D model or individually for each mesh.  
 
-#### [Culling Per Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#per-mesh)
-
-This causes visibility to only be checked within the same mesh node, and not across the whole (selected) asset.  
-
-#### [Culling Quality](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#culling-quality)
-
-Specify how thorough triangle visibility should be determined.  
-
-#### [Ignore Transparency](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#ignore-transparency)
-
-This causes culling to treat transparent geometry as opaque.  
-
-#### [Run after Decimation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#run-after-decimator)
-
-When enabled, occluded triangles will be removed after decimation. Requires an Optimization `object` with `Decimator` section within the same configuration or commandline execution.  
-
-#### [Visibility Diffusion](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#visibility-diffusion)
-
-Control if neighbors of visible triangles are also flagged as visible.  
-
-#### [Sample Edges](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#sample-edges)
-
-Defines if edges should be sampled during visibility computation.  
-
-### [Per Lump Decision (Visibility Per Part)](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#visibility-per-part)
-
-This causes culling to be performed for whole mesh chunks, rather than per triangle.  
-
-### [Lump Threshold](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#visibility-per-part)
-
-Threshold in percent based on number of visible triangles. The default of 0.1 means that if 90% or more triangles per mesh lump are invisible, the whole lump is declared as invisible.  
-
-
-### [Small Feature Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#small-feature-culling)
-
-Removes small parts from the 3D model. You can select the size threshold in scene units (usually meters) under which small parts should be removed. The algorithm works on a per part (mesh lump) basis.  
-
-#### [Size Threshold](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings#size-threshold)
-
-Choice between Relative Percentage (bounding box) or Value (scene units).  
-
-
-### [Scene Graph Flattening](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-flattening-settings)
-
-Scene Graph Flattening settings allow nodes to be combined according to various properties.  
-
-#### [Method](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-flattening-settings#flattening-methods)
-
-Several methods are provided for controlling how nodes are combined. Material merging is automatically handled when nodes are flattened, depending on the mode.  
-
-#### [Preserved Scene Depth](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-flattening-settings#preserved-scene-depth-level)
-
-This number acts as an overall limit, preserving a minimum number of scene graph levels, by allowing some nodes to be combined while preserving others based on their level in the hierarchy.  
 -->
 
 ### Download or copy the settings file
