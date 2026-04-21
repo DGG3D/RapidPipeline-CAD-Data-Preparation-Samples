@@ -460,5 +460,54 @@ Decides whether winding order of whole (mesh) lumps of geometry are flipped as o
 [fill-holes.json](fill-holes.json)
 
 ```
-{}
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"fine", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "repair" : {
+        "defeatureSolidHoles": {
+            "matchMode": {
+                "circular": {
+                    "maxDiameter": {
+                        "value": 3
+                    }
+                }
+            },
+            "material" : {
+                "neighbour" : {}
+            },
+            "separateMesh" : "disabled"
+        }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
 ```
