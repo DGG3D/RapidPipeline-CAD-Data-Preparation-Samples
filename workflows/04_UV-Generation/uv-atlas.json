@@ -1,0 +1,56 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "materialEdit": {
+      "materialReplacer": {
+        "defaultMaterial": {
+          "generateUVs": {
+            "uvAtlasGenerator": {
+              "addCheckerTexture": {},
+              "method": "packedCubeUVs",
+              "segmentationCutAngle": 88.0,
+              "segmentationChartAngle": 130.0,
+              "maxAngleError": 114.0,
+              "maxPrimitivesPerChart": 10000,
+              "cutOverlappingPieces": true,
+              "atlasMode": "separateAlpha",
+              "allowRectangularAtlases": false,
+              "packingResolution": 1024,
+              "packingPixelDistance": 2
+            }
+          }
+        }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}

@@ -3,7 +3,7 @@
 ## Description
 
 This section is about Mesh Simplification automation such as Decimation or Remeshing operations.  
-Simplifying geometry to improve performance or recreating surfaces for better editing.  
+Simplifying geometry to improve performance or re-creating surfaces for better editing.  
 
 ### Example Files & Results  
 
@@ -58,7 +58,7 @@ Further information regarding Mesh Simplification ([Decimation](https://docs.rap
 ### Decimation
 
 ```
-rpdx --read_config decimation.json -i 'Cooper CAD refined.step' -r  
+rpdx --read_config decimation.json -i 'Cooper CAD refined.step' -r -o output  
 ```
 
 #### Decimation - Combined Workflow
@@ -66,7 +66,7 @@ rpdx --read_config decimation.json -i 'Cooper CAD refined.step' -r
 Decimation combined with vertex merging and winding order correction:
 
 ```
-rpdx --read_config decimation_combined-workflow.json -i 'no.468 gt4rs.stp' -r  
+rpdx --read_config decimation_combined-workflow.json -i 'no.468 gt4rs.stp' -r -o output  
 ```
 
 ### Remeshing
