@@ -15,7 +15,7 @@ The sample results can be found within the [sub-directory here](./sample-results
 
 All previous sample models and results after processing through universal CAD data preparation configuration and batch setup:  
 
-| Input CAD Asset | Processed Output | Stats |
+| Input CAD Asset | Processed Output | Output Data Statistics |
 |---------|-------------|-------------|
 | [28L Storage Box - Assembly.x_t](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>)<br>[<img src="../../sample-assets/28L Storage Box - Assembly.x_t/screenshot/28L Storage Box - Assembly.jpg" width="200">](<../../sample-assets/28L Storage Box - Assembly.x_t/README.md>) | <img src="./sample-results/output/CAD-dataprep/28L Storage Box - Assembly_web/28L Storage Box - Assembly_output.jpg" width="200"> | [stats](<./sample-results/output/CAD-dataprep/28L Storage Box - Assembly_web/28L Storage Box - Assembly_output.json>) |
 | [ASSEMBLING_notebook.STEP](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>)<br>[<img src="../../sample-assets/ASSEMBLING_notebook.STEP/screenshot/ASSEMBLING_notebook.jpg" width="200">](<../../sample-assets/ASSEMBLING_notebook.STEP/README.md>) | <img src="./sample-results/output/CAD-dataprep/ASSEMBLING_notebook_web/ASSEMBLING_notebook_output.jpg" width="200"> | [stats](<./sample-results/output/CAD-dataprep/ASSEMBLING_notebook_web/ASSEMBLING_notebook_output.json>) |
