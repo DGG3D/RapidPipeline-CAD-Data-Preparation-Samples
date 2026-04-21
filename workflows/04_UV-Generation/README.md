@@ -20,6 +20,9 @@ The sample results can be found within the [sub-directory here](./sample-results
 
 <br>
 
+### UV Atlas Generation
+
+#### Single UV Atlas vs UV Atlas per Material
 
 Game-controller-ASM.STEP - single UV atlas vs UV atlas per material:  
 
@@ -36,12 +39,18 @@ KA ProArt- RTX-4090SO16G v16.step - single UV atlas vs UV atlas per material:
 | [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
 <br>
 
+#### UDIMs (UV Tiles)
+
 Game-controller-ASM.STEP with 3 UDIM Tiles:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
 | [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas_UDIMs.jpg" width="400"> |  
 <br>
+
+### Tiling UVs Generation (Projection Mapping)
+
+#### CubeUnwrap
 
 KA ProArt- RTX-4090SO16G v16.step - Tiling UV Generation (Projection Mapping) - cubeUnwrap (Box Projection):  
 
