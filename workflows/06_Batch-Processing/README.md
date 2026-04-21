@@ -33,6 +33,7 @@ All previous sample models and results after processing through universal CAD da
 
 The python based batch script and setup instructions are available on the DGG Githib page: https://github.com/DGG3D/cli-batching-simple.  
 The script essentially utilizes the RapidPipeline 3D Processor CLI to batch over an input folder structure and can deal with an arbitrary number of input files. It also stores processing and input vs output file metadata (processing metrics, file statistics) as well as thumbnails via PBR rendering.  
+<br>
 Information about all supported 3D and CAD file formats as well as supported 3D features is provided within [the RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support#feature-support-by-3d-format).
 
 ### Set-up python batch script and batch processing environment
