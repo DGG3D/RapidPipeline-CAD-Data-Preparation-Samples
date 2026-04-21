@@ -36,8 +36,18 @@ This complex sample CAD asset with fillets and interior parts demonstrates quite
 
 3. Some parts can be challenging for further processing as they are overlapping (e.g. pins for winding order correction). This usually stems from issues with instancing or duplicated parametric data from the input asset.  
 
+<img src="./screenshot/WRE_45_windingOrderDetail_0.jpg" width="400">
 
+<img src="./screenshot/WRE_45_windingOrderDetail_1.jpg" width="400">
 
+See above for an example. The geometry is arranged as seen in the first screenshot, but moving the mesh a little reveals a second, identical mesh in the same position. Ideally, this duplicate geometry would be removed before further steps like winding order correction. Depending on how nodes and meshes are merged, these two separate meshes could also easily end up as a single mesh, but still duplicate the geometry.  
+
+A robust solution suitable for real world data is not trivial:  
+* Only parts of a mesh may be duplicated.
+* Multiple meshes might be partial duplicates of each other. Again, potentially only in some parts, but not completely.
+* Geometry might be duplicate, but with inverted winding order, e.g. to represent the inside and outside of a flat surface.
+* Positions might be duplicated, but other properties (e.g. normals, UVs, materials) might be different.
+* As an extended version of the problem, the geometry might not be strictly duplicated, but still show similar issues with triangles lying exactly on top of other triangles, resulting in overlap. Consider e.g. the geometry of labels wrapped around existing geometry without a sufficient offset.
 
 ## Author
 
