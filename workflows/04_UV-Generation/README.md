@@ -36,6 +36,13 @@ KA ProArt- RTX-4090SO16G v16.step - single UV atlas vs UV atlas per material:
 | [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
 <br>
 
+KA ProArt- RTX-4090SO16G v16.step - Tiling UV Generation (Projection Mapping) - cubeUnwrap (Box Projection):  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_cubeUnwrap.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
+<br>
+
 
 ## Steps to Reproduce
 
@@ -88,6 +95,14 @@ rpdx --read_config XXX.json -i '' -r
 
 ```
 rpdx --read_config XXX.json -i '' -r
+```
+
+### Tiling UVs Generation (Projection Mapping)
+
+#### CubeUnwrap
+
+```
+rpdx --read_config cubeUnwrap.json -i 'KA ProArt- RTX-4090SO16G v16.step' -r -o output_cubeUnwrap
 ```
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
@@ -243,6 +258,85 @@ Note: When utilizing UV Atlas Generation per Material (`separateMaterials`), opt
              }
            }
          }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+#### Multiple UV atlases (atlas factor)
+
+[uv-atlas-byMaterial.json](uv-atlas-byMaterial.json)
+
+
+```
+{}
+```
+
+#### UDIMs (UV Tiles)
+
+[uv-atlas-byMaterial.json](uv-atlas-byMaterial.json)
+
+
+```
+{}
+```
+
+### Tiling UV Generation (Projection Mapping)
+
+
+#### Cube Unwrap (Box Projection)
+
+[cubeUnwrap.json](cubeUnwrap.json)
+
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {},
+    "modelEdit": {},
+    "materialEdit": {
+      "materialReplacer": {
+        "defaultMaterial": {
+          "generateUVs": {
+            "cubeUnwrap": {
+              "addCheckerTexture": {},
+              "scale": 10.0,
+              "sourceSpace3D": "world"
+            }
+          }
+        }
       }
     }
   },

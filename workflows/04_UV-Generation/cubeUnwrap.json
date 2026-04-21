@@ -1,0 +1,50 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {},
+    "modelEdit": {},
+    "materialEdit": {
+      "materialReplacer": {
+        "defaultMaterial": {
+          "generateUVs": {
+            "cubeUnwrap": {
+              "addCheckerTexture": {},
+              "scale": 10.0,
+              "sourceSpace3D": "world"
+            }
+          }
+        }
+      }
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
