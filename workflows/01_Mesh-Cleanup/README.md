@@ -74,7 +74,7 @@ Cooper CAD refined.step defeatured solid holes with diameter of 3mm (only fillin
 Detailed wireframe view of the defeatured surface holes (3mm max diameter):
 | Tessellated Input | Processed Output |
 |---------|-------------|
-| <img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm.jpg" width="400"> | <img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm.jpg" width="400"> |
+| <img src="sample-results/screenshot/Cooper CAD refined.step-wire.jpg" width="400"> | <img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm-wire.jpg" width="400"> |
 
 Note: There are currently two methods of hole filling within the 3D Processor: [Fill Surface Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#fill-surface-holes) and [Defeature Solid Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#defeature-solid-holes). For the given use case (CAD Data Preparation) defeaturing of solid holes is most applicable and therefore part of this sample workflow.  
 Filling of Surface holes only applies to breaks in the continuity of a mesh or surface and is therefore helpful with more raw modeling data and usually does not occure often within CAD Dataprep, given that the tessellation and other cleanup steps are working propperly.  
