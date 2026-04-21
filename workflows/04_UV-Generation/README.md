@@ -40,7 +40,7 @@ KA ProArt- RTX-4090SO16G v16.step - Tiling UV Generation (Projection Mapping) - 
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_cubeUnwrap.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
+| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_cubeUnwrap.jpg" width="400"> |  
 <br>
 
 
