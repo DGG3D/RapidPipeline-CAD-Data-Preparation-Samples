@@ -107,7 +107,7 @@ Please see below some basic explanation for each feature and setting. Each heade
 
 Simplifies a mesh by reducing the number of faces while preserving materials, UVs and textures. This is useful for reducing file size, and improving performance by reducing memory usage.  
 
-#### Face and Vertex Targets (https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#faces-target)
+#### [Face and Vertex Targets](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#faces-target)
 
 The target amount (value) or percentage of faces (triangles) or vertices. RapidPipeline will attempt to get as close as possible to the chosen value, though sometimes a mesh may require a slightly different final triangle count to preserve surface continuity.
 
