@@ -2,7 +2,7 @@
 
 ## Description
 
-This section is about further 3D processing operations as optional processes which can help with complex data sets by removing invisible or small geometry as well as flattening nodes, meshes or materials.  
+This workflow section is about further 3D processing operations as optional processes which can help with complex data sets by removing invisible or small geometry as well as flattening nodes, meshes or materials.  
 
 ### Example Files & Results  
 

@@ -1,0 +1,123 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": true
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 30.0,
+      "computationMethod": "area"
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair": {
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
+  },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 1
+  },
+  "meshCulling": {
+    "occlusionCulling": {
+      "perMesh": false,
+      "quality": "default",
+      "ignoreTransparency": false,
+      "diffusion": "conservative",
+      "runAfterDecimator": false,
+      "sampleEdges": true,
+      "perLumpDecision" : true,
+      "lumpThreshold": 0.1
+    },
+    "smallFeatureCulling": {
+      "sizeThreshold": {
+        "percentage": 0.01
+      },
+      "runAfterDecimator": false
+    }
+  },
+    "optimize": {
+        "3dModelOptimizationMethod": {
+            "meshAndMaterialOptimization": {
+                "decimator": {
+                    "materialOptimization": {
+                      "materialMerger": {
+                        "materialRegenerator": {
+                          "uvAtlasGenerator": {
+                            "textureBaker": {
+                              "bakingResolution": {
+                                "default": 0
+                              },
+                              "sampleCount": 4,
+                              "texMapAutoScaling": true,
+                              "bakeCombinedScene": false,
+                              "topologicalHolesToAlpha": false,
+                              "powerOfTwoResolution": "ceil",
+                              "inpaintingRadius": 32.0
+                            },
+                            "method": "packedCubeUVs",
+                            "segmentationCutAngle": 88.0,
+                            "segmentationChartAngle": 130.0,
+                            "maxAngleError": 114.0,
+                            "maxPrimitivesPerChart": 10000,
+                            "cutOverlappingPieces": true,
+                            "atlasMode": "separateMaterials",
+                            "allowRectangularAtlases": false,
+                            "packingResolution": 1024,
+                            "packingPixelDistance": 2,
+                            "atlasFactor": 1
+                         }
+                       }
+                     }
+                    },
+                    "target": {
+                        "faces": {
+                            "value": 500000
+                        },
+                        "deviation": {
+                            "percentage": 0.005
+                        }
+                    },
+                    "preserveNormals": true,
+                    "preserveTopology": false
+                }
+            }
+        }
+    },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}

@@ -2,22 +2,25 @@
 
 ## Description
 
-...
+This workflow section is about optimization options such as full downstream optimization pipelines including Mesh Simplification, UV Generation and Texture Baking as well as more advanced optimization concepts such as mesh deviation, size on screen or file size target.  
 
-### Example Files
+Additional features such as mesh and texture compression are also looked at.  
 
-[Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>)  
-[Download Link](https://grabcad.com/library/xbox-style-controller)  
-[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>)  
+### Example Files & Results
 
-## Sample Results
+<br>
+
+The sample results can be found within the [sub-directory here](./sample-results)  
+
+<br>
+
 
 Game-controller-ASM.STEP remeshed to 50,000 faces:  
-<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_wire.jpg" width="400">  
-Remeshed result shaded - without normal map:  
-<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_noNormalMap.jpg" width="400">  
-Remeshed result shaded - with normal map:  
-<img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_shaded.jpg" width="400">  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_wire.jpg" width="400"><img src="sample-results/screenshot/Game-controller-ASM.STEP_remeshing-baking_shaded.jpg" width="400"> |  
+<br>
 
 
 ## Steps to Reproduce
@@ -33,7 +36,7 @@ In order to reproduce the given results please follow the steps below:
 3. Get the respective .json settings configuration file further below and make sure input file as well as .json file are present  
 4. Run the command listed below in your favorite commandline (e.g. windows powershell), more about [3D Processor CLI commands here](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/cli-setup-guide#commands-guide)  
 
-Further information regarding Optimization (...) in the [RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/3d-processor-overview).  
+Further information regarding [Optimization](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-optimize-settings) in the [RapidPipeline Documentation](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/3d-processor-overview).  
 
 ## Commands
 
@@ -57,12 +60,12 @@ It is following `.json` syntax and is validated against the [RapidPipeline 3D Pr
 In this example we are only making use of the `Import`, `Optimize`, `Modifier`, `Scene Graph Flattening` and `Export` sections (`objects`).  
 However, there are a lot more options for 3D processing. More about combining more sections within a single settings .json file in the [Batch Processing workflow](../06_Batch-Processing/README.md).  
 
-
+<!-- 
 ## Features & Settings - Main Concepts
 
 Please see below some basic explanation for each feature and setting. Each header also contains a link to the respective sections of the RapidPipeline Documentation:  
 
-<!-- 
+
 ### [Mesh Culling](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-culling-settings)
 
 Various methods of culling geometry from an input model.  

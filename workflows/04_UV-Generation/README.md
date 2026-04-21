@@ -2,7 +2,7 @@
 
 ## Description
 
-This section is about UV Generation. There are multiple ways to generate UVs, each highly depending on the particular use-case:  
+This workflow section is about UV Generation. There are multiple ways to generate UVs, each highly depending on the particular use-case:  
 
 1. UV Atlas Generation  
 	- Different Methods and Layout (e.g. for hard-surface assets, for organic assets, for authoring workflows vs automated processing etc.)  

@@ -2,7 +2,7 @@
 
 ## Description
 
-This section is about cleaning up and repairing the tessellated 3D model to get a solid basis for further processing and workflows.  
+This workflow section is about cleaning up and repairing the tessellated 3D model to get a solid basis for further processing and workflows.  
 
 Within the RapidPipeline 3D Processor CLI the Mesh Cleanup features as described in this repository can be found under the [3D Edit](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings) section.  
 
