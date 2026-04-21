@@ -71,8 +71,8 @@ Cooper CAD refined.step defeatured solid holes with diameter of 3mm (only fillin
 | [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined.step.jpg" width="400"><img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm.jpg" width="400"> |  
 
 
-Detailed wireframe view of the defeatured surface holes (3mm max diameter) - on the right an examplary decimated version (12 triangles) illustrating how hole filling can help simplifying further processing:
-| Tessellated Input | Processed Output | Decimated Output (examplary) |
+Detailed wireframe view of the defeatured surface holes (3mm max diameter) - on the right an exemplary decimated version (12 triangles) illustrating how hole filling can help simplifying further processing:
+| Tessellated Input | Processed Output | Decimated Output (exemplary) |
 |---------|-------------|-------------|
 | <img src="sample-results/screenshot/Cooper CAD refined.step-wire.jpg" width="400"> | <img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm-wire.jpg" width="400"> | <img src="sample-results/screenshot/Cooper CAD refined.step_fdefeaturedSolidHoles3mm-wire-decimated-12tris.jpg" width="400"> |
 
