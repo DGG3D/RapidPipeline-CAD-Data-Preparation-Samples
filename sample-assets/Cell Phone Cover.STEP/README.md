@@ -10,7 +10,7 @@ https://grabcad.com/library/cell-phone-case-4
 
 ## Screenshots
 
-![screenshot](screenshot/Cell Phone Cover.STEP.jpg)  
+![screenshot](<screenshot/Cell Phone Cover.STEP.jpg>)  
 
 ## Description
 
