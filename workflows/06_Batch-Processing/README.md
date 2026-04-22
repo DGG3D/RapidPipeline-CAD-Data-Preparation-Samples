@@ -12,7 +12,6 @@ The sample results can be found within the [sub-directory here](./sample-results
 
 <br>
 
-
 All previous sample models and results after processing through universal CAD data preparation configuration and batch setup:  
 
 | Input CAD Asset | Processed Output | Output Data Statistics |
@@ -28,6 +27,32 @@ All previous sample models and results after processing through universal CAD da
 | [no.468 gt4rs.stp](<../../sample-assets/no.468 gt4rs.stp/README.md>)<br>[<img src="../../sample-assets/no.468 gt4rs.stp/screenshot/no.468 gt4rs.jpg" width="200">](<../../sample-assets/no.468 gt4rs.stp/README.md>) | <img src="./sample-results/output/CAD-dataprep/no.468 gt4rs_web/no.468 gt4rs_output.jpg" width="200"> | [stats](<./sample-results/output/CAD-dataprep/no.468 gt4rs_web/no.468 gt4rs_output.json>) |
 | [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>)<br>[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="200">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="./sample-results/output/CAD-dataprep/Robot rv_web/Robot rv_output.jpg" width="200"> | [stats](<./sample-results/output/CAD-dataprep/Robot rv_web/Robot rv_output.json>) |
 | [WRE 45 ASS TOTAL.x_t](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>)<br>[<img src="../../sample-assets/WRE 45 ASS TOTAL.x_t/screenshot/WRE 45 ASS TOTAL.x_t.jpg" width="200">](<../../sample-assets/WRE 45 ASS TOTAL.x_t/README.md>) | <img src="./sample-results/output/CAD-dataprep/WRE 45 ASS TOTAL_web/WRE 45 ASS TOTAL_output.jpg" width="200"> | [stats](<./sample-results/output/CAD-dataprep/WRE 45 ASS TOTAL_web/WRE 45 ASS TOTAL_output.json>) |
+
+### Utilized CAD Data Preparation & 3D Processing workflows
+
+- [CAD Data Ingestion](../00_CAD-Data-Ingestion/README.md)  
+	- tessellation  
+	- patch sewing  
+	- remove T-Junctions  
+
+- [Mesh Cleanup](../01_Mesh-Cleanup/README.md)  
+	- mesh normals recalculation  
+	- winding order correction  
+	- removal of duplicated vertices  
+
+- [3D Operations](../02_3D-Operations/README.md)  
+	- scene graph flattening  
+	- mesh culling  
+
+- [Mesh Simplification](../03_Mesh-Simplification-Remeshing/README.md)  
+	- decimation  
+	- mesh normal preservation  
+	- [mesh deviation target (percentage)](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#deviation-target)
+
+- [UV Generation](../04_UV-Generation/README.md)  
+	- UV atlas generation per material (packedCubeUVs)  
+
+Note: The mesh `deviation target` is especially helpful with batch processes, as it is capable of reducing the complexity of the input mesh data in relation to the actual surface complexity. Therefore more complex geometry will be reduced less, while simple meshes will be reduced more. This can be also paired with an overall `face target` as an upper limit on the total allowed mesh resolution for the whole batch.  
 
 ## Steps to Reproduce
 
@@ -227,126 +252,11 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
 
 ```
 {
-    "import": {
-      "CAD": {
-        "tessellationResolution":"custom", 
-        "sewTolerance": 0.05, 
-        "removeTJunctions": true,
-        "maxSurfaceDeviation": 0.05,
-        "maxAngle": 40,
-        "maxEdgeLength": 0
-      },
+[...]
     "general": {
       "rotateZUp": true
       }
     },
-  "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": true,
-      "hardAngleThreshold": 30.0,
-      "computationMethod": "area"
-    },
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
-    },
-    "repair": {
-      "windingOrder": {
-        "visibilityMode": "default",
-        "ignoreTransparency" : false,
-        "perLump": true
-      }
-    }
-  },
-  "sceneGraphFlattening": {
-    "method": "byMaterial",
-    "preservedSceneDepth": 1
-  },
-  "meshCulling": {
-    "occlusionCulling": {
-      "perMesh": false,
-      "quality": "default",
-      "ignoreTransparency": false,
-      "diffusion": "conservative",
-      "runAfterDecimator": false,
-      "sampleEdges": true,
-      "perLumpDecision" : true,
-      "lumpThreshold": 0.1
-    },
-    "smallFeatureCulling": {
-      "sizeThreshold": {
-        "percentage": 0.01
-      },
-      "runAfterDecimator": false
-    }
-  },
-    "optimize": {
-        "3dModelOptimizationMethod": {
-            "meshAndMaterialOptimization": {
-                "decimator": {
-                    "materialOptimization": {
-                      "materialMerger": {
-                        "materialRegenerator": {
-                          "uvAtlasGenerator": {
-                            "textureBaker": {
-                              "bakingResolution": {
-                                "default": 0
-                              },
-                              "sampleCount": 4,
-                              "texMapAutoScaling": true,
-                              "bakeCombinedScene": false,
-                              "topologicalHolesToAlpha": false,
-                              "powerOfTwoResolution": "ceil",
-                              "inpaintingRadius": 32.0
-                            },
-                            "method": "packedCubeUVs",
-                            "segmentationCutAngle": 88.0,
-                            "segmentationChartAngle": 130.0,
-                            "maxAngleError": 114.0,
-                            "maxPrimitivesPerChart": 10000,
-                            "cutOverlappingPieces": true,
-                            "atlasMode": "separateMaterials",
-                            "allowRectangularAtlases": false,
-                            "packingResolution": 1024,
-                            "packingPixelDistance": 2,
-                            "atlasFactor": 1
-                         }
-                       }
-                     }
-                    },
-                    "target": {
-                        "faces": {
-                            "value": 500000
-                        },
-                        "deviation": {
-                            "percentage": 0.005
-                        }
-                    },
-                    "preserveNormals": true,
-                    "preserveTopology": false
-                }
-            }
-        }
-    },
-    "export": [
-        {
-            "discard": {
-                "emptyNodes": true, 
-                "unusedUVs": false
-            }, 
-            "fileName": "", 
-            "format": {
-                "usd": {
-                }
-            }, 
-            "trisToQuads" : {
-                "enable" : false
-            },
-            "optimizeFaceOrder": true, 
-            "preserveTextureFilenames": false, 
-            "reencodeTextures": "auto", 
-            "textureMapFilePrefix": "", 
-            "textureNamingScript": ""
-        }
-  ]
+[...]
 }
 ```

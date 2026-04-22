@@ -1,0 +1,77 @@
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"extraFine", 
+        "sewTolerance": 0.01, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      }
+    },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 0
+  },
+  "optimize": {
+    "3dModelOptimizationMethod": {
+      "meshAndMaterialOptimization": {
+        "decimator": {
+          "target": {
+            "faces": {
+              "value": 10000000
+            },
+            "deviation": {
+              "percentage": 0
+            }
+          },
+          "materialOptimization": {
+          "materialMerger": {
+            "materialRegenerator": {
+              "uvAtlasGenerator": {
+                "textureBaker": {
+                  "normalMap": {}
+                }
+              }
+            }
+           }
+          },
+          "preserveTopology": false,
+          "preserveNormals": false,
+          "preserveMeshBorders": true,
+          "preserveMaterialBorders": false,
+          "collapseUnconnectedVertices": true,
+          "boundaryPreservationFactor": 0.50,
+          "collapseDistanceThreshold": 0.005,
+          "method": "quadric"
+        }
+      }
+    }
+  },
+  "modifier": {
+    "screensize": {
+      "pixelTarget": 2048.0
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
