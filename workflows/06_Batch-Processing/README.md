@@ -52,7 +52,7 @@ All previous sample models and results after processing through universal CAD da
 - [UV Generation](../04_UV-Generation/README.md)  
 	- UV atlas generation per material (packedCubeUVs)  
 
-Note: The mesh `deviation target` is especially helpful with batch processes, as it is capable of reducing the complexity of the input mesh data in relation to the actual surface complexity. Therefore more complex geometry will be reduced less, while simple meshes will be reduced more. This can be also paired with an overall `face target` as an upper limit on the total allowed mesh resolution for the whole batch.  
+Note: The mesh [`deviation target`](../03_Mesh-Simplification-Remeshing/README.md#deviation-target) is especially helpful with batch processes, as it is capable of reducing the complexity of the input mesh data in relation to the actual surface complexity. Therefore more complex geometry will be reduced less, while simple meshes will be reduced more. This can be also paired with an overall `face target` as an upper limit on the total allowed mesh resolution for the whole batch.  
 
 ## Steps to Reproduce
 
