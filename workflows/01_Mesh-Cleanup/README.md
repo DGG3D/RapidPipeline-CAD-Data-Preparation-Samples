@@ -201,8 +201,8 @@ Automatically fix the winding order of parts on import.
 #### [Visibility Mode](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
 
 Set how visibility is computed  
-- default: Triangle facing is checked on a global basis. This is the default value  
-- mesh: Triangle facing is checked individually per mesh node  
+- default: Triangle visibility is checked against the whole asset. This is the default value  
+- mesh: Triangle visibility is checked only against the mesh it is part of
 
 #### [Winding Order Ignore Transparency](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#fix-winding-order)
 
@@ -212,14 +212,16 @@ Decides whether visibility includes non-opaque meshes.
 
 Decides whether winding order of whole (mesh) lumps of geometry are flipped as one or per triangle.  
 
+A mesh lump here is any group of triangles that are connected to each other. A mesh may consist of one or many lumps.  
+
 
 ### [Defeature Solid Holes](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#defeature-solid-holes)
 
-Identifies and defeatures (fills) circular solid holes.  
+Identifies and defeatures (removes internal geometry and fills ends) flat, circular solid holes.  
 
 #### [Match Mode](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#match-mode)
 
-Match Mode to identify the solid holes. e.g. circular means only circular features are identified.  
+Match Mode to identify the solid holes. Circular means only circular features are identified.  
 
 #### [Maximum Circular Distance](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#maximum-circular-distance)
 
@@ -231,7 +233,7 @@ Decides what material is used for the newly created (filled) surfaces.
 
 #### [Neighbour](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#neighbour)
 
-Newly created (filled) surfaces materials will be defined by the holes neighbouring materials.  
+Newly created (filled) surfaces materials will be defined by the dominant material neighbouring the hole.  
 
 #### [Separate Mesh](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.8#separate-mesh)
 
