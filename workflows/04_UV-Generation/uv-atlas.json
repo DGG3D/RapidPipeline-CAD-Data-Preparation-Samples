@@ -10,12 +10,18 @@
       }
     },
   "3dEdit": {
+    "repair": {
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    },
     "materialEdit": {
       "materialReplacer": {
         "defaultMaterial": {
           "generateUVs": {
             "uvAtlasGenerator": {
-              "addCheckerTexture": {},
               "method": "packedCubeUVs",
               "segmentationCutAngle": 88.0,
               "segmentationChartAngle": 130.0,

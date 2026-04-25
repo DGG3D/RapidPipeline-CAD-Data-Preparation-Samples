@@ -22,26 +22,36 @@ The sample results can be found within the [sub-directory here](./sample-results
 
 ### UV Atlas Generation
 
-#### Single UV Atlas vs UV Atlas per Material
 
-Game-controller-ASM.STEP - single UV atlas vs UV atlas per material:  
+#### Shared UV Atlas 
+
+Robot rv.IGS - UV atlas per material:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-| [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas.jpg" width="400"><img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas-per-material.jpg" width="400"> |  
+| [Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>), [Download Link](https://grabcad.com/library/mitsubishi-rv-2f-d1-s16-6-axis-robot-arm-1)[<img src="../../sample-assets/Robot rv.IGS/screenshot/Robotrv.jpg" width="400">](<../../sample-assets/Robot rv.IGS/README.md>) | <img src="sample-results/screenshot/Robot rv.IGS_uv-atlas.jpg" width="400"> |  
+<br>
+
+#### UV Atlas per Material
+
+Game-controller-ASM.STEP - UV atlas per material:  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas-per-material.jpg" width="400"> |  
 <br>
 
 
-KA ProArt- RTX-4090SO16G v16.step - single UV atlas vs UV atlas per material:  
+KA ProArt- RTX-4090SO16G v16.step - UV atlas per material:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas.jpg" width="400"><img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
+| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1) [<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas-per-material.jpg" width="400"> |  
 <br>
 
 #### UDIMs (UV Tiles)
 
-Game-controller-ASM.STEP with 3 UDIM Tiles:  
+KA ProArt- RTX-4090SO16G v16.step with 3 UDIM Tiles:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
@@ -79,14 +89,10 @@ Further information regarding [UV Generation](https://docs.rapidpipeline.com/doc
 
 ### UV Atlas Generation
 
-#### Single UV Atlas 
+#### Shared UV Atlas 
 
 ```
-rpdx --read_config uv-atlas.json -i 'KA ProArt- RTX-4090SO16G v16.step' -r -o output
-```
-
-```
-rpdx --read_config uv-atlas.json -i 'Game-controller-ASM.STEP' -r -o output
+rpdx --read_config uv-atlas.json -i 'Robot rv.IGS' -r -o output
 ```
 
 Note: Using the [`packedCubeUnwrap`](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/03settingsGuide/3d-processor-3dedit-settings#generate-uv-atlas---unwrapping) UV atlas generation method as tessellated CAD assets fall into the hard-surface category of assets.  
@@ -204,10 +210,11 @@ Currently the only method available is `cubeUnwrap`.
 
 ### UV Atlas Generation
 
-#### Single UV Atlas
+#### Shared UV Atlas
 
 [uv-atlas.json](uv-atlas.json)
 
+Note: Winding Order Correction was performed as well due to the input asset ([Robot rv.IGS](<../../sample-assets/Robot rv.IGS/README.md>))
 
 ```
 {
@@ -222,12 +229,18 @@ Currently the only method available is `cubeUnwrap`.
       }
     },
   "3dEdit": {
+    "repair": {
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    },
     "materialEdit": {
       "materialReplacer": {
         "defaultMaterial": {
           "generateUVs": {
             "uvAtlasGenerator": {
-              "addCheckerTexture": {},
               "method": "packedCubeUVs",
               "segmentationCutAngle": 88.0,
               "segmentationChartAngle": 130.0,
