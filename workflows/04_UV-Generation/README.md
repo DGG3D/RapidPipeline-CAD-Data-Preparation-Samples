@@ -45,7 +45,7 @@ Game-controller-ASM.STEP with 3 UDIM Tiles:
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
-| [Game-controller-ASM.STEP](<../../sample-assets/Game-controller-ASM.STEP/README.md>), [Download Link](https://grabcad.com/library/xbox-style-controller)[<img src="../../sample-assets/Game-controller-ASM.STEP/screenshot/Game-controller-ASM.STEP.jpg" width="400">](<../../sample-assets/Game-controller-ASM.STEP/README.md>) | <img src="sample-results/screenshot/Game-controller-ASM.STEP_uv-atlas_UDIMs.jpg" width="400"> |  
+| [KA ProArt- RTX-4090SO16G v16.step](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>), [Download Link](https://grabcad.com/library/proart-rtx-4080so16g-1)[<img src="../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/screenshot/KA ProArt- RTX-4090SO16G v16.jpg" width="400">](<../../sample-assets/KA ProArt- RTX-4090SO16G v16.step/README.md>) | <img src="sample-results/screenshot/KA ProArt- RTX-4090SO16G v16.step_uv-atlas_UDIMs.jpg" width="400"> |  
 <br>
 
 ### Tiling UVs Generation (Projection Mapping)
@@ -111,7 +111,7 @@ rpdx --read_config uv-atlas-byMaterial_atlasFactor3.json -i 'KA ProArt- RTX-4090
 #### UDIMs (UV Tiles)
 
 ```
-rpdx --read_config uv-atlas_UDIMs.json -i 'Game-controller-ASM.STEP' -r -o output_UDIMs
+rpdx --read_config uv-atlas_UDIMs.json -i 'KA ProArt- RTX-4090SO16G v16.step' -r -o output_UDIMs
 ```
 
 ### Tiling UVs Generation (Projection Mapping)

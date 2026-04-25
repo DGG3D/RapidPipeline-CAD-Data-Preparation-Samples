@@ -72,6 +72,12 @@ rpdx --read_config mesh-culling.json -i 'ASSEMBLING_notebook.STEP' -r -o output_
 rpdx --read_config mesh-culling.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_mesh-culling
 ```
 
+#### Mesh Culling - Aggressive
+
+```
+rpdx --read_config mesh-culling-aggressive.json --read_c rotateZUp.json -i 'Cordless Drill DeWalt DCD791_variation01-standard.3dm' -r -o output_mesh-culling_aggressive
+```
+
 ### Scene Graph Flattening
 
 #### Flattening by Material
@@ -85,6 +91,14 @@ rpdx --read_config flattening.json -i 'Cooper CAD refined.step' -r -o output_fla
 ```
 rpdx --read_config flattening-depthLevelPres.json -i 'Cooper CAD refined.step' -r -o output_flattening-depthLevelPres
 ```
+
+#### Flattening by Material with Scene Depth Level Preservation and Node Naming Scripting
+
+```
+rpdx --read_c flattening-depthLevelPresNaming.json -i 'Cooper CAD refined.step' -r -o output_flattening-depthLevelPresNaming
+```
+
+Note: The last flattening configuration utilizes RapidPipeline's [CLI Naming Scripting Feature](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/tutorial-cli-naming-scripting). 
 
 Note: Within the configuration .json settings files in this repository only `usd` output formats are specified. RapidPipeline [supports a lot more file formats](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/format-support) which can be [configured within the settings file](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessingSchemaSettings/processor-schema-settings-v1.7#export-slot).  
 
@@ -170,9 +184,9 @@ Several methods are provided for controlling how nodes are combined. Material me
 This number acts as an overall limit, preserving a minimum number of scene graph levels, by allowing some nodes to be combined while preserving others based on their level in the hierarchy.  
 
 
-### Download or copy the settings file
+## Download or copy the settings file
 
-#### Mesh Culling
+### Mesh Culling
 
 [mesh-culling.json](mesh-culling.json)
 
@@ -233,7 +247,80 @@ This number acts as an overall limit, preserving a minimum number of scene graph
 }
 ```
 
-#### Winding Order Correction
+### Mesh Culling - Aggressive
+
+[mesh-culling-aggressive.json](mesh-culling-aggressive.json)
+
+```
+{
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"extraFine", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.05,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "3dEdit": {
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      }
+    }
+},
+  "meshCulling": {
+    "occlusionCulling": {
+      "perMesh": false,
+      "quality": "fast",
+      "ignoreTransparency": false,
+      "diffusion": "none",
+      "runAfterDecimator": false,
+      "sampleEdges": false,
+      "perLumpDecision" : true,
+      "lumpThreshold": 0.1
+    },
+    "smallFeatureCulling": {
+      "sizeThreshold": {
+        "percentage": 0.01
+      },
+      "runAfterDecimator": false
+    }
+  },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+}
+```
+
+### Flattening by Material
 
 [flattening.json](flattening.json)
 
@@ -256,6 +343,124 @@ This number acts as an overall limit, preserving a minimum number of scene graph
     "method": "byMaterial",
     "preservedSceneDepth": 0
   },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+### Flattening by Material with Scene Depth Level Preservation
+
+[flattening-depthLevelPres.json](flattening-depthLevelPres.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.4,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 1
+  },
+  "3dEdit": {
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      }
+    }
+},
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
+}
+```
+
+#### Flattening by Material with Scene Depth Level Preservation and Node Naming Scripting
+
+[flattening-depthLevelPresNaming.json](flattening-depthLevelPresNaming.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.4,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 1,
+    "nodeNamingScript": "'mtl-grp_' + node.meshGroupIdx + '_' + node.parentName"
+  },
+  "3dEdit": {
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair" : {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      }
+    }
+},
     "export": [
         {
             "discard": {

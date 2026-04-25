@@ -44,9 +44,9 @@ Cordless Drill DeWalt DCD791_variation01-standard.3dm - size on screen values an
 
 | Size on Screen | Triangles Count | Texture Resolution |
 |---------|-------------|-------------|
-| 512 | Triangles Count | 2048 x 2048 |
-| 1024 | Triangles Count | 4096 x 4096 |
-| 2048 | Triangles Count | 8192 x 8192 |
+| 512 | 27,541 | 2048 x 2048 |
+| 1024 | 62,179 | 4096 x 4096 |
+| 2048 | 76,980 | 8192 x 8192 |
 <br>
 
 

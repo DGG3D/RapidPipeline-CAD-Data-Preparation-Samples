@@ -1,8 +1,10 @@
 _errors
 configurations
 input
+input-recomputeNormals
 input-Z-Up
 output
+tmp
 LICENSE
 optimize.py
 README.md
