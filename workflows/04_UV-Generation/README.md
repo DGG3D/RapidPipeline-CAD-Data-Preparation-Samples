@@ -25,7 +25,7 @@ The sample results can be found within the [sub-directory here](./sample-results
 
 #### Shared UV Atlas 
 
-Robot rv.IGS - UV atlas per material:  
+Robot rv.IGS - Single Shared UV atlas:  
 
 | Input CAD Asset | Processed Output |
 |---------|-------------|
