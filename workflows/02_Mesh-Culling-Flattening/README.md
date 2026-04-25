@@ -44,6 +44,11 @@ Cooper CAD refined.step flattened by Material with Scene Graph Preservation Leve
 |---------|-------------|
 | [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_flattening-depthLevelPres.jpg" width="400"> |  
 
+Cooper CAD refined.step flattened by Material with Scene Graph Preservation Level 1 and renamed nodes via [CLI Naming Scripting Feature](https://docs.rapidpipeline.com/docs/componentDocs/3dProcessor/04cliDocumentation/tutorial-cli-naming-scripting):  
+
+| Input CAD Asset | Processed Output |
+|---------|-------------|
+| [Cooper CAD refined.step](<../../sample-assets/Cooper CAD refined.step/README.md>), [Download Link](https://grabcad.com/library/cooper-quadruped-robot-robot-dog-1)[<img src="../../sample-assets/Cooper CAD refined.step/screenshot/cooper-quadruped-robot-robot-dog-1.jpg" width="400">](<../../sample-assets/Cooper CAD refined.step/README.md>) | <img src="sample-results/screenshot/Cooper CAD refined_flattening-depthLevelPresNaming.jpg" width="400"> |  
 
 ## Steps to Reproduce
 
