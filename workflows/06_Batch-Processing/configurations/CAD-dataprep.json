@@ -13,6 +13,11 @@
       }
     },
   "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 30.0,
+      "computationMethod": "area"
+    },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
     },

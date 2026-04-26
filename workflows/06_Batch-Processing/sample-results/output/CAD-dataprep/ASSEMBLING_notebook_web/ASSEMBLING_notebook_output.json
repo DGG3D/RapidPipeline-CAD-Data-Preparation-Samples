@@ -1,12 +1,12 @@
 {
-  "bbMin":    [-0.175054, -0.000550078, -0.228271],
+  "bbMin":    [-0.175054, -0.000550077, -0.228271],
   "bbMax":    [0.175, 0.249341, 0.13],
   "bbCenter": [-2.69486e-05, 0.124395, -0.0491353],
   "bbSize":   [0.350054, 0.249891, 0.358271],
-  "area3D":   1.08664,
-  "numVertices": 109704,
-  "numVerticesSingleIndexed": 207162,
-  "numTriangles": 213789,
+  "area3D":   1.08673,
+  "numVertices": 116794,
+  "numVerticesSingleIndexed": 217641,
+  "numTriangles": 225379,
   "numQuads": 0,
   "numMeshes": 74,
   "numSubMeshes": 74,
@@ -70,8 +70,8 @@
   "numThicknessMaps": 0,
   "numIridescenceMaps": 0,
   "numIridescenceThicknessMaps": 0,
-  "avgAngleDistortion": 0.0218192,
-  "maxAngleDistortion": 15.5003,
+  "avgAngleDistortion": 0.0209885,
+  "maxAngleDistortion": 13.6677,
   "displacementReferenceMin": 0,
   "displacementReferenceMax": 0
 }
