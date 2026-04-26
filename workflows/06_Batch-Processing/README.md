@@ -112,6 +112,10 @@ python optimize.py -i input -c configurations/CAD-dataprep.json -o output/CAD-da
 python optimize.py -i input-Z-Up -c configurations/CAD-dataprep-Z-Up.json -o output/CAD-dataprep
 ```
 
+```
+python optimize.py -i input-recomputeNormals -c configurations/CAD-dataprep-recomputeNormals.json -o output/CAD-dataprep
+```
+
 Note: On windows the python command can also be stored within a `.bat` file. That way also multiple different python command executions can be chained and executed one after the other.
 
 ## Settings File
@@ -127,7 +131,7 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
         "tessellationResolution":"custom", 
         "sewTolerance": 0.05, 
         "removeTJunctions": true,
-        "maxSurfaceDeviation": 0.05,
+        "maxSurfaceDeviation": 0.03,
         "maxAngle": 40,
         "maxEdgeLength": 0
       },
@@ -136,15 +140,16 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
       }
     },
   "3dEdit": {
-    "meshNormals": {
-      "recomputeInputNormals": true,
-      "hardAngleThreshold": 30.0,
-      "computationMethod": "area"
-    },
     "modelEdit": {
         "splitMultiMaterialMeshes": true
     },
     "repair": {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      },
       "windingOrder": {
         "visibilityMode": "default",
         "ignoreTransparency" : false,
@@ -154,7 +159,8 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
   },
   "sceneGraphFlattening": {
     "method": "byMaterial",
-    "preservedSceneDepth": 1
+    "preservedSceneDepth": 1,
+    "nodeNamingScript": "'mtl-grp_' + node.meshGroupIdx + '_' + node.parentName"
   },
   "meshCulling": {
     "occlusionCulling": {
@@ -205,15 +211,16 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
                             "packingPixelDistance": 2,
                             "atlasFactor": 1
                          }
-                       }
+                       },
+                       "materialNamingScript": "'mat_' + material.materialGroupIdx + '_' + material.parentNodeName"
                      }
                     },
                     "target": {
                         "faces": {
-                            "value": 500000
+                            "value": 800000
                         },
                         "deviation": {
-                            "percentage": 0.005
+                            "percentage": 0.01
                         }
                     },
                     "preserveNormals": true,
@@ -258,5 +265,143 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
       }
     },
 [...]
+}
+```
+
+### CAD Dataprep Recompute Normals
+
+[CAD-dataprep-recomputeNormals.json](CAD-dataprep-recomputeNormals.json)
+
+```
+{
+    "import": {
+      "CAD": {
+        "tessellationResolution":"custom", 
+        "sewTolerance": 0.05, 
+        "removeTJunctions": true,
+        "maxSurfaceDeviation": 0.03,
+        "maxAngle": 40,
+        "maxEdgeLength": 0
+      },
+    "general": {
+      "rotateZUp": false
+      }
+    },
+  "3dEdit": {
+    "meshNormals": {
+      "recomputeInputNormals": true,
+      "hardAngleThreshold": 30.0,
+      "computationMethod": "area"
+    },
+    "modelEdit": {
+        "splitMultiMaterialMeshes": true
+    },
+    "repair": {
+      "vertexMerging":{
+        "mergeDistance": {
+          "percentage": 0.0
+        },
+        "perMesh": false 
+      },
+      "windingOrder": {
+        "visibilityMode": "default",
+        "ignoreTransparency" : false,
+        "perLump": true
+      }
+    }
+  },
+  "sceneGraphFlattening": {
+    "method": "byMaterial",
+    "preservedSceneDepth": 1,
+    "nodeNamingScript": "'mtl-grp_' + node.meshGroupIdx + '_'+ node.parentName"
+  },
+  "meshCulling": {
+    "occlusionCulling": {
+      "perMesh": false,
+      "quality": "default",
+      "ignoreTransparency": false,
+      "diffusion": "conservative",
+      "runAfterDecimator": false,
+      "sampleEdges": true,
+      "perLumpDecision" : true,
+      "lumpThreshold": 0.1
+    },
+    "smallFeatureCulling": {
+      "sizeThreshold": {
+        "percentage": 0.01
+      },
+      "runAfterDecimator": false
+    }
+  },
+    "optimize": {
+        "3dModelOptimizationMethod": {
+            "meshAndMaterialOptimization": {
+                "decimator": {
+                    "materialOptimization": {
+                      "materialMerger": {
+                        "materialRegenerator": {
+                          "uvAtlasGenerator": {
+                            "textureBaker": {
+                              "bakingResolution": {
+                                "default": 0
+                              },
+                              "sampleCount": 4,
+                              "texMapAutoScaling": true,
+                              "bakeCombinedScene": false,
+                              "topologicalHolesToAlpha": false,
+                              "powerOfTwoResolution": "ceil",
+                              "inpaintingRadius": 32.0
+                            },
+                            "method": "packedCubeUVs",
+                            "segmentationCutAngle": 88.0,
+                            "segmentationChartAngle": 130.0,
+                            "maxAngleError": 114.0,
+                            "maxPrimitivesPerChart": 10000,
+                            "cutOverlappingPieces": true,
+                            "atlasMode": "separateMaterials",
+                            "allowRectangularAtlases": false,
+                            "packingResolution": 1024,
+                            "packingPixelDistance": 2,
+                            "atlasFactor": 1
+                         }
+                       },
+                       "materialNamingScript": "'mat_' + material.materialGroupIdx + '_'+ material.parentNodeName"
+                     }
+                    },
+                    "target": {
+                        "faces": {
+                            "value": 800000
+                        },
+                        "deviation": {
+                            "percentage": 0.01
+                        }
+                    },
+                    "preserveNormals": true,
+                    "preserveTopology": false
+                }
+            }
+        }
+    },
+    "export": [
+        {
+            "discard": {
+                "emptyNodes": true, 
+                "unusedUVs": false
+            }, 
+            "fileName": "", 
+            "format": {
+                "usd": {
+                }
+            }, 
+            "trisToQuads" : {
+                "enable" : false
+            },
+            "optimizeFaceOrder": true, 
+            "preserveTextureFilenames": false, 
+            "reencodeTextures": "auto", 
+            "textureMapFilePrefix": "", 
+            "textureNamingScript": ""
+        }
+  ]
 }
 ```

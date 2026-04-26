@@ -17,7 +17,6 @@
         "defaultMaterial": {
           "generateUVs": {
             "cubeUnwrap": {
-              "addCheckerTexture": {},
               "scale": 10.0,
               "sourceSpace3D": "world"
             }
