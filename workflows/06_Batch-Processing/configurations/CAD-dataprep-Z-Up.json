@@ -24,7 +24,7 @@
     "repair": {
       "vertexMerging":{
         "mergeDistance": {
-          "percentage": 0.0
+          "percentage": 0.01
         },
         "perMesh": false 
       },
@@ -53,7 +53,7 @@
     },
     "smallFeatureCulling": {
       "sizeThreshold": {
-        "percentage": 0.01
+        "percentage": 0.0
       },
       "runAfterDecimator": false
     }
@@ -98,7 +98,7 @@
                             "value": 800000
                         },
                         "deviation": {
-                            "percentage": 0.01
+                            "percentage": 0.05
                         }
                     },
                     "preserveNormals": true,

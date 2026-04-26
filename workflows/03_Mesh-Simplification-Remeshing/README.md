@@ -186,7 +186,7 @@ The remeshing face targets perfroms and additional decimation operation after th
                             "value": 500000
                         },
                         "deviation": {
-                            "percentage": 0.005
+                            "percentage": 0.05
                         }
                     },
                     "preserveNormals": true,
@@ -267,7 +267,7 @@ The remeshing face targets perfroms and additional decimation operation after th
                             "value": 500000
                         },
                         "deviation": {
-                            "percentage": 0.005
+                            "percentage": 0.05
                         }
                     },
                     "preserveNormals": true,

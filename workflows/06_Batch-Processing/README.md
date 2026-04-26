@@ -216,7 +216,7 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
                             "value": 800000
                         },
                         "deviation": {
-                            "percentage": 0.01
+                            "percentage": 0.05
                         }
                     },
                     "preserveNormals": true,
