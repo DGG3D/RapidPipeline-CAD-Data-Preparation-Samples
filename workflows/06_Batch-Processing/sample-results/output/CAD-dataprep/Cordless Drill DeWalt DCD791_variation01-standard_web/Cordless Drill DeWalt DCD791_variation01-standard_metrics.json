@@ -1,0 +1,61 @@
+{
+    "ID" : "Cordless Drill DeWalt DCD791_variation01-standard_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 134328320.000000,
+        "t" : 0.000001
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 338030592.000000,
+        "t" : 3.306378
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 338030592.000000,
+        "t" : 0.085509
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 338030592.000000,
+        "t" : 0.234443
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 405508096.000000,
+        "t" : 7.046848,
+        "removedTriangles" : 43729,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 3.117859
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.680251,
+            "t" : 1.186238,
+            "t_packing" : 0.111130
+        },
+        {
+            "type" : "export",
+            "t" : 0.173917,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "Cordless Drill DeWalt DCD791_variation01-standard..usd",
+            "fullPath" : "output/CAD-dataprep/Cordless Drill DeWalt DCD791_variation01-standard_web/0_usd/Cordless Drill DeWalt DCD791_variation01-standard..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 405508096.000000,
+        "t" : 11.588874,
+        "ompMaxThreads" : 24,
+        "processID" : 35216,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

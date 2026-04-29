@@ -1,0 +1,61 @@
+{
+    "ID" : "Robot rv_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 68464640.000000,
+        "t" : 0.000006
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 179236864.000000,
+        "t" : 3.828271
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 179236864.000000,
+        "t" : 0.046783
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 189575168.000000,
+        "t" : 0.146198
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 231968768.000000,
+        "t" : 7.745472,
+        "removedTriangles" : 0,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 2.430427
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.677460,
+            "t" : 0.266833,
+            "t_packing" : 0.189017
+        },
+        {
+            "type" : "export",
+            "t" : 0.052072,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "Robot rv..usd",
+            "fullPath" : "output/CAD-dataprep/Robot rv_web/0_usd/Robot rv..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 231968768.000000,
+        "t" : 12.484508,
+        "ompMaxThreads" : 24,
+        "processID" : 33888,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

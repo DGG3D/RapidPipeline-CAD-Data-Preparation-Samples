@@ -38,7 +38,7 @@
   "sceneGraphFlattening": {
     "method": "byMaterial",
     "preservedSceneDepth": 1,
-    "nodeNamingScript": "'mtl-grp_' + node.meshGroupIdx + '_'+ node.parentName"
+    "nodeNamingScript": "'mtl-grp_' + node.meshGroupIdx + '_' + node.parentName"
   },
   "meshCulling": {
     "occlusionCulling": {
@@ -90,7 +90,7 @@
                             "atlasFactor": 1
                          }
                        },
-                       "materialNamingScript": "'mat_' + material.materialGroupIdx + '_'+ material.parentNodeName"
+                       "materialNamingScript": "'mat_' + material.materialGroupIdx + '_' + material.parentNodeName"
                      }
                     },
                     "target": {
@@ -121,7 +121,7 @@
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 

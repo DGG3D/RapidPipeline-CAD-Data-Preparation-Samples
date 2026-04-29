@@ -239,7 +239,7 @@ Note: On windows the python command can also be stored within a `.bat` file. Tha
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 

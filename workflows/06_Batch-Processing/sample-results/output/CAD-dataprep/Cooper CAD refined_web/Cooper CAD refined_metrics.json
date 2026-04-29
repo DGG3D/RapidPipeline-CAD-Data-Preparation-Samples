@@ -1,0 +1,61 @@
+{
+    "ID" : "Cooper CAD refined_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 158892032.000000,
+        "t" : 0.000001
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 1948315648.000000,
+        "t" : 221.562648
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 1948315648.000000,
+        "t" : 2.261622
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 2294898688.000000,
+        "t" : 0.577217
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 3427667968.000000,
+        "t" : 207.032329,
+        "removedTriangles" : 663109,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 118.336568
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.705260,
+            "t" : 43.651152,
+            "t_packing" : 0.033669
+        },
+        {
+            "type" : "export",
+            "t" : 1.399859,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "Cooper CAD refined..usd",
+            "fullPath" : "output/CAD-dataprep/Cooper CAD refined_web/0_usd/Cooper CAD refined..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 3427667968.000000,
+        "t" : 432.351930,
+        "ompMaxThreads" : 24,
+        "processID" : 12000,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

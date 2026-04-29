@@ -1,0 +1,61 @@
+{
+    "ID" : "28L Storage Box - Assembly_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 59330560.000000,
+        "t" : 0.000004
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 160002048.000000,
+        "t" : 2.078397
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 162332672.000000,
+        "t" : 0.074532
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 180015104.000000,
+        "t" : 0.217960
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 279470080.000000,
+        "t" : 16.908965,
+        "removedTriangles" : 0,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 6.518945
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.709513,
+            "t" : 0.998783,
+            "t_packing" : 0.154476
+        },
+        {
+            "type" : "export",
+            "t" : 0.073694,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "28L Storage Box - Assembly..usd",
+            "fullPath" : "output/CAD-dataprep/28L Storage Box - Assembly_web/0_usd/28L Storage Box - Assembly..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 279470080.000000,
+        "t" : 20.117674,
+        "ompMaxThreads" : 24,
+        "processID" : 11308,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}
