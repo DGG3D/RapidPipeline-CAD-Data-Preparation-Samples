@@ -33,9 +33,9 @@
                 }
             }, 
             "trisToQuads" : {
-                "enable" : true
+                "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 
