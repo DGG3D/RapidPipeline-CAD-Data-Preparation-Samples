@@ -315,7 +315,7 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
     "repair" : {
       "vertexMerging":{
         "mergeDistance": {
-          "percentage": 0.005
+          "percentage": 0.01
         },
         "perMesh": false 
       }
@@ -335,7 +335,7 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 
@@ -376,8 +376,8 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
       }
     },
   "3dEdit": {
-    "modelEdit": {
-        "splitMultiMaterialMeshes": true
+    "meshNormals": {
+      "recomputeInputNormals": false
     },
     "repair": {
       "windingOrder": {
@@ -401,7 +401,7 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 
@@ -425,9 +425,6 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
         "maxSurfaceDeviation": 0.05,
         "maxAngle": 40,
         "maxEdgeLength": 0
-      },
-    "general": {
-      "rotateZUp": false
       }
     },
   "3dEdit": {
@@ -464,7 +461,7 @@ Same Settings as seen above with `Defeaturing Solid Holes`.
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 
