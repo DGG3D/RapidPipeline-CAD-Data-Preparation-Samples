@@ -19,7 +19,7 @@
       "computationMethod": "area"
     },
     "modelEdit": {
-        "splitMultiMaterialMeshes": false
+        "splitMultiMaterialMeshes": true
     },
     "repair": {
       "vertexMerging":{
@@ -121,7 +121,7 @@
             "trisToQuads" : {
                 "enable" : false
             },
-            "optimizeFaceOrder": true, 
+            "optimizeFaceOrder": false, 
             "preserveTextureFilenames": false, 
             "reencodeTextures": "auto", 
             "textureMapFilePrefix": "", 

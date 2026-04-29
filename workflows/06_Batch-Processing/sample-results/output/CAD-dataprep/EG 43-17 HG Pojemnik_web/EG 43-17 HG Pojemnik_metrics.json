@@ -1,0 +1,61 @@
+{
+    "ID" : "EG 43-17 HG Pojemnik_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 57401344.000000,
+        "t" : 0.000001
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 116756480.000000,
+        "t" : 2.287067
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 118665216.000000,
+        "t" : 0.050259
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 129007616.000000,
+        "t" : 0.178057
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 184586240.000000,
+        "t" : 9.302025,
+        "removedTriangles" : 0,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 2.726848
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.658014,
+            "t" : 0.200309,
+            "t_packing" : 0.155179
+        },
+        {
+            "type" : "export",
+            "t" : 0.055902,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "EG 43-17 HG Pojemnik..usd",
+            "fullPath" : "output/CAD-dataprep/EG 43-17 HG Pojemnik_web/0_usd/EG 43-17 HG Pojemnik..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 184586240.000000,
+        "t" : 12.894095,
+        "ompMaxThreads" : 24,
+        "processID" : 39196,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

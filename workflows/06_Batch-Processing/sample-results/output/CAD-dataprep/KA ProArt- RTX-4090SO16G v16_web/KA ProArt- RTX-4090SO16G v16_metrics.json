@@ -1,0 +1,61 @@
+{
+    "ID" : "KA ProArt- RTX-4090SO16G v16_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 86999040.000000,
+        "t" : 0.000006
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 429780992.000000,
+        "t" : 41.760986
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 436453376.000000,
+        "t" : 0.208767
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 472596480.000000,
+        "t" : 0.266069
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 776077312.000000,
+        "t" : 40.060011,
+        "removedTriangles" : 588,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 26.538259
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.678059,
+            "t" : 4.279631,
+            "t_packing" : 0.440665
+        },
+        {
+            "type" : "export",
+            "t" : 0.304584,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "KA ProArt- RTX-4090SO16G v16..usd",
+            "fullPath" : "output/CAD-dataprep/KA ProArt- RTX-4090SO16G v16_web/0_usd/KA ProArt- RTX-4090SO16G v16..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 776077312.000000,
+        "t" : 83.077515,
+        "ompMaxThreads" : 24,
+        "processID" : 21088,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

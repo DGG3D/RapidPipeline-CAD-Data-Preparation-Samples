@@ -1,0 +1,61 @@
+{
+    "ID" : "WRE 45 ASS TOTAL_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 158760960.000000,
+        "t" : 0.000006
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 2115878912.000000,
+        "t" : 54.908041
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 2115878912.000000,
+        "t" : 1.868643
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 2451755008.000000,
+        "t" : 0.534682
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 2989056000.000000,
+        "t" : 83.885440,
+        "removedTriangles" : 1357993,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 44.596023
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.683471,
+            "t" : 12.565397,
+            "t_packing" : 0.023235
+        },
+        {
+            "type" : "export",
+            "t" : 0.354480,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "WRE 45 ASS TOTAL..usd",
+            "fullPath" : "output/CAD-dataprep/WRE 45 ASS TOTAL_web/0_usd/WRE 45 ASS TOTAL..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 2989056000.000000,
+        "t" : 142.079839,
+        "ompMaxThreads" : 24,
+        "processID" : 39332,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

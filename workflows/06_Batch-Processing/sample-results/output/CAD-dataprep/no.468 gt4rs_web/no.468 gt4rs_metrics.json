@@ -1,0 +1,61 @@
+{
+    "ID" : "no.468 gt4rs_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 158744576.000000,
+        "t" : 0.000001
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 2357129216.000000,
+        "t" : 1073.080715
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 2357129216.000000,
+        "t" : 2.679619
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 2616246272.000000,
+        "t" : 0.769915
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 3260420096.000000,
+        "t" : 129.563783,
+        "removedTriangles" : 86866,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 86.187519
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.355476,
+            "t" : 18.570094,
+            "t_packing" : 0.123883
+        },
+        {
+            "type" : "export",
+            "t" : 1.490660,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "no.468 gt4rs..usd",
+            "fullPath" : "output/CAD-dataprep/no.468 gt4rs_web/0_usd/no.468 gt4rs..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 3260420096.000000,
+        "t" : 1207.104953,
+        "ompMaxThreads" : 24,
+        "processID" : 39000,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

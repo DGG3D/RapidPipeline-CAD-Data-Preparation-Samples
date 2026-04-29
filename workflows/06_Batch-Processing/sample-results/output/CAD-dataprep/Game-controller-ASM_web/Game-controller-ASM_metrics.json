@@ -1,0 +1,61 @@
+{
+    "ID" : "Game-controller-ASM_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 82518016.000000,
+        "t" : 0.000001
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 257249280.000000,
+        "t" : 10.042289
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 257249280.000000,
+        "t" : 0.059805
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 257249280.000000,
+        "t" : 0.184235
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 282660864.000000,
+        "t" : 14.180729,
+        "removedTriangles" : 0,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 4.833456
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.554391,
+            "t" : 1.417733,
+            "t_packing" : 0.031859
+        },
+        {
+            "type" : "export",
+            "t" : 0.103094,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "Game-controller-ASM..usd",
+            "fullPath" : "output/CAD-dataprep/Game-controller-ASM_web/0_usd/Game-controller-ASM..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 282660864.000000,
+        "t" : 25.760326,
+        "ompMaxThreads" : 24,
+        "processID" : 3244,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

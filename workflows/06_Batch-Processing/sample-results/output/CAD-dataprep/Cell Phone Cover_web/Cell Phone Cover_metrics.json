@@ -1,0 +1,61 @@
+{
+    "ID" : "Cell Phone Cover_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 54636544.000000,
+        "t" : 0.000004
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 67723264.000000,
+        "t" : 1.101356
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 67825664.000000,
+        "t" : 0.003239
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 79601664.000000,
+        "t" : 0.191238
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 93904896.000000,
+        "t" : 2.020018,
+        "removedTriangles" : 0,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 0.213760
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.331876,
+            "t" : 0.084773,
+            "t_packing" : 0.080418
+        },
+        {
+            "type" : "export",
+            "t" : 0.034092,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "Cell Phone Cover..usd",
+            "fullPath" : "output/CAD-dataprep/Cell Phone Cover_web/0_usd/Cell Phone Cover..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 93908992.000000,
+        "t" : 4.036753,
+        "ompMaxThreads" : 24,
+        "processID" : 14524,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}

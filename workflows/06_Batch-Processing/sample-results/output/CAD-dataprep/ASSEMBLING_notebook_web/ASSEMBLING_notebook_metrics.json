@@ -1,0 +1,61 @@
+{
+    "ID" : "ASSEMBLING_notebook_metrics",
+    "results" : [
+    {
+        "type" : "loadConfig",
+        "peakMemory" : 90955776.000000,
+        "t" : 0.000003
+    },
+    {
+        "type" : "import",
+        "peakMemory" : 405753856.000000,
+        "t" : 16.130085
+    },
+    {
+        "type" : "writeInfo",
+        "peakMemory" : 409890816.000000,
+        "t" : 0.144577
+    },
+    {
+        "type" : "render",
+        "peakMemory" : 453292032.000000,
+        "t" : 0.206608
+    },
+    {
+        "type" : "compact_fixedTarget",
+        "peakMemory" : 623099904.000000,
+        "t" : 29.059950,
+        "removedTriangles" : 79784,
+        "children" : [
+        {
+            "type" : "decimate",
+            "t" : 15.070383
+        },
+        {
+            "type" : "unwrap",
+            "packingEfficiency" : 0.493496,
+            "t" : 3.410206,
+            "t_packing" : 0.023907
+        },
+        {
+            "type" : "export",
+            "t" : 0.236302,
+            "exportFormat" : "USD - Universal Scene Description",
+            "extension" : ".usd",
+            "filename" : "ASSEMBLING_notebook..usd",
+            "fullPath" : "output/CAD-dataprep/ASSEMBLING_notebook_web/0_usd/ASSEMBLING_notebook..usd",
+            "mimeType" : "model/vnd.usda"
+        }
+        ]
+    },
+    {
+        "type" : "global",
+        "peakMemory" : 623099904.000000,
+        "t" : 46.520125,
+        "ompMaxThreads" : 24,
+        "processID" : 32300,
+        "codepage" : "1252  (ANSI - Latin I)",
+        "version" : "v7.6.3 (95461c5, Apr 24 2026, 11:51:14)"
+    }
+    ]
+}
